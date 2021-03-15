@@ -20,7 +20,6 @@ int main()
 {
     firstTesting();
     printf("\nTest are done!");
-    getchar();
     return 0;
 }
 
