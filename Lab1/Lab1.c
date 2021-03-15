@@ -1,8 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <conio.h>
-#include <math.h>
-#include <assert.h>
 
 #ifndef TEST
 int fillingArray(char* arr, int numb, int last);
