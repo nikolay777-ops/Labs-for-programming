@@ -1,1 +1,17 @@
+name: Testing
 
+on: push
+
+jobs:
+  build:
+    
+      runs-on: ubuntu-latest
+
+      steps:
+        - name: Testing
+          uses: actions/checkout@v2
+
+        - run: |
+          cd Lab1/
+          make Lab1_Test
+          ./Lab1_Test
