@@ -37,8 +37,6 @@ int main()
 		printf("Out of memory.");
 	}
 	fillingArray(array, numb, last);
-	getchar();
-	getchar();
 }
 #endif
 int fillingArray(char* arr, int numb, int last)
