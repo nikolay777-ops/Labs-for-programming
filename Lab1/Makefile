@@ -1,4 +1,4 @@
 Lab1: Lab1.c
-	gcc -std=c89 Lab1.c -o Lab1
+	gcc -o Lab1 Lab1.c -lm
 Lab1_Test: Lab1_Test.c Lab1_Test.c
-	gcc -ansi Lab1_Test.c Lab1.c -o Lab1_Test -Dmain=_main
+	gcc Lab1_Test.c Lab1.c -o Lab1_test -D TESTING -lm
