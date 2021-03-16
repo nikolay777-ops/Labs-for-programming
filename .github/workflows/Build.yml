@@ -13,8 +13,8 @@ jobs:
     - uses: actions/checkout@v2
     - name: make
       run: |
-           make test
-           cd Lab1/Lab1
+            cd Lab1/Lab1
+            make test
     - run: |
            cd Lab1/Lab1 
            ./Lab1_Test
