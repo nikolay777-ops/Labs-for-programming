@@ -1,17 +1,20 @@
-name: Testing
+name: Builder
 
-on: push
+on:
+  push:
+    branches: [ main ]
 
 jobs:
   build:
-    
-      runs-on: ubuntu-latest
 
-      steps:
-        - name: Testing
-          uses: actions/checkout@v2
+    runs-on: ubuntu-latest
 
-        - run: |
-          cd Lab1/
-          make Lab1_Test
-          ./Lab1_Test
+    steps:
+    - uses: actions/checkout@v2
+    - name: make
+      run: |
+           make test
+           cd Lab1/Lab1
+    - run: |
+           cd Lab1/Lab1 
+           ./Lab1_Test
