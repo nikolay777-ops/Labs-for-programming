@@ -1,0 +1,22 @@
+name: build-and-test
+
+on: push
+
+jobs:
+
+  BuildAndTest:
+
+    runs-on: ubuntu-latest
+    steps:
+    
+    - name: Checkout code
+      uses: actions/checkout@v2
+      
+    - name: Install Valgring and Linter
+      run: |
+          sudo apt install valgrind
+          sudo pip install cpplint
+          cpplint --help
+          
+    - name: Test them all
+      run: make TESTALL -C Lab2/Lab2.13
