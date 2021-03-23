@@ -5,7 +5,7 @@ Lab2.13TEST: Lab2.13Test.c Lab2.13.c
 Valgrind:
 	echo "15\n" > input.txt
 	valgrind ./Lab2.13 < input.txt
-	valgrind ./Lab2.13TEST
+	valgrind ./Lab2.13Test
 
 Linter:
 	cpplint --filter=-readability/casting,-legal/copyright Lab2.13.c Lab2.13TEST.c
