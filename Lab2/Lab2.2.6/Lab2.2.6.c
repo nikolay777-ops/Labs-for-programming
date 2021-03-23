@@ -46,7 +46,7 @@ int main()
         printf("Incorrect input. Please try again: ");
     }
     printf("Please enter the allowable error (it should be less than 1):");
-    while (!scanf("%lf", &eps) && eps >= 1.0)
+    while (!scanf("%f", &eps) && eps >= 1.0)
     {
         fflush(stdin);
         printf("Incorrcet input. Please try again: ");
@@ -57,7 +57,7 @@ int main()
         sinAlternative = sinAlt(i, degToRad(degrees));
         if (fabs(sinAlternative - sinNormal) < eps)
         {
-            printf("Sin was calculated by the normal function: %lf\n", sinNormal);
+            printf("Sin was calculated by the normal function: %f\n", sinNormal);
             printf("Sin was calculated by Alternative method:%lf, and count of n is %d\n", sinAlternative, i);
             break;
         }
