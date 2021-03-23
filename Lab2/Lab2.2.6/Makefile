@@ -7,4 +7,4 @@ Valgrind:
 	valgrind ./Lab2.2.6 < input.txt
 	valgrind ./Lab2.2.6Test
 
-TESTALL: Lab2.2.6 Lab2.2.6TEST Valgrind 
+TESTALL: Lab2.2.6 Lab2.2.6TEST Valgrind
