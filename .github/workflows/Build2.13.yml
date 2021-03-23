@@ -1,6 +1,8 @@
 name: build-and-test
 
-on: push
+on: 
+  push:
+      paths: [Lab2/Lab2.13]
 
 jobs:
 
