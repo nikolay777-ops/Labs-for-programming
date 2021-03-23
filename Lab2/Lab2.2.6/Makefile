@@ -8,6 +8,6 @@ Valgrind:
 	valgrind ./Lab2.2.6TEST
 
 Linter:
-	cpplint --filter=-readability/casting,-legal/copyright Lab2.2.6.c Lab2.2.6TEST.c
+	cpplint Lab2.2.6.c Lab2.2.6TEST.c
 
 TESTALL: Lab2.2.6 Lab2.2.6Test Valgrind Linter
