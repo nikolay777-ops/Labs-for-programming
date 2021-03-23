@@ -10,4 +10,4 @@ Valgrind:
 Linter:
 	cpplint Lab2.2.6.c Lab2.2.6TEST.c
 
-TESTALL: Lab2.2.6 Lab2.2.6Test Valgrind Linter
+TESTALL: Lab2.2.6 Lab2.2.6TEST Valgrind Linter Valgrind
