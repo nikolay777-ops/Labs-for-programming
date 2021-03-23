@@ -3,7 +3,7 @@
 #define PI 3.14159265
 #define MAX_FACT 20
 
-long double fact(int N)
+long double factIterate(int N)
 {
     int i;
     long double fact = 1;
