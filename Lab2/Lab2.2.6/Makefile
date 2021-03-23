@@ -8,6 +8,6 @@ Valgrind:
 	valgrind ./Lab2.2.6TEST
 
 Linter:
-	cpplint Lab2.2.6.c Lab2.2.6TEST.c
+	cpplint Lab2.2.6.c Lab2.2.6Test.c
 
 TESTALL: Lab2.2.6 Lab2.2.6TEST Valgrind Linter Valgrind
