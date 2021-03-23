@@ -16,7 +16,6 @@ jobs:
       run: |
           sudo apt install valgrind
           sudo pip install cpplint
-          cpplint --help
           
     - name: Test them all
       run: make TESTALL -C Lab2/Lab2.13
