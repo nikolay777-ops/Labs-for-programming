@@ -34,8 +34,7 @@ void secondTest()
 }
 void thirdTest()
 {   
-    double* side;
-    side = (double*)malloc(sizeof(int) * 3);
+    double *side = (double*)malloc(sizeof(int) * 3);
     assert(side);
     side[0] = 3.0;
     side[1] = 4.0;
