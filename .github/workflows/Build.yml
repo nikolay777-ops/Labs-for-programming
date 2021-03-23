@@ -2,7 +2,9 @@ name: Builder
 
 on:
   push:
-    branches: [ main ]
+    paths:
+     - 'Lab1/**'
+    
 
 jobs:
   build:
