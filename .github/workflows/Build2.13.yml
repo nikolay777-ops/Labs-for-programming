@@ -15,10 +15,9 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v2
       
-    - name: Install Valgring and Linter
+    - name: Install Valgring
       run: |
           sudo apt install valgrind
-          sudo pip install cpplint
           
     - name: Test them all
       run: make TESTALL -C Lab2/Lab2.13
