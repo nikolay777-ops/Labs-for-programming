@@ -10,10 +10,11 @@ jobs:
   BuildAndTest:
 
     runs-on: ubuntu-latest
+    
     steps:
-    
-    - name: Checkout code
     - uses: actions/checkout@v2
-    
     - name : Testing
-      run: cd Lab3 make Lab3TEST -С Lab3
+      run: |
+        cd Lab3
+        make Lab3TEST 
+        ./Lab3Test.c
