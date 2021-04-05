@@ -2,17 +2,19 @@ name: build-and-test
 
 on: 
   push:
-      paths: 
-      - 'Lab3/**'
+    paths:
+    - 'Lab3/**'
 
 jobs:
 
   BuildAndTest:
 
-    runs-on: ubuntu-latest 
+    runs-on: ubuntu-latest
     steps:
-    - name: Checkout code
-    - uses: actions/checkout@v2
     
-    - name : Testing
-      run: make TESTALL -C Lab3/
+    - name: Checkout code
+      uses: actions/checkout@v2
+      
+    - name: Testing
+      run: | 
+          make TESTALL -C Lab3/
