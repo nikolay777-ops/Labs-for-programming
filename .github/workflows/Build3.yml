@@ -17,4 +17,4 @@ jobs:
       
     - name: Testing
       run: | 
-          make TESTALL -C Lab3/
+          make TESTALL -C Lab3
