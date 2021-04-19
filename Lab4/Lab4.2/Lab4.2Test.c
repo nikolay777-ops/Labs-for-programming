@@ -51,7 +51,5 @@ int main()
     SecondTest();
     ThirdTest();
     printf("Tests are done sucessfully!");
-    getchar();
     return 0;
 }
-
