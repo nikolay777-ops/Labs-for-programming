@@ -11,9 +11,6 @@ void FirstTest()
     char* str2;
     char* str3;
     unsigned long int temp = 0;
-    str1 = (char*)malloc(sizeof(char) * 6);
-    str2 = (char*)malloc(sizeof(char) * 1);
-    str3 = (char*)malloc(sizeof(char) * 12);
     str1 = ("12345\0");
     str2 = ("1000000000\0");
     str3 = ("2147483647\0");
@@ -33,9 +30,6 @@ void SecondTest()
     char* str1;
     char* str2;
     char* str3;
-    str1 = (char*)malloc(sizeof(char) * 30);
-    str2 = (char*)malloc(sizeof(char) * 30);
-    str3 = (char*)malloc(sizeof(char) * 30);
     str1 = ("Aspirin 15.04.99 132 1250\0");
     str2 = ("$*(&(! 15.&*.$) &($) *()$!\0");
     str3 = ("Aspirin $£!$ 132 1250\0");
@@ -57,8 +51,8 @@ void ThirdTest()
 {
     struct pills* test = (struct pills*)malloc(sizeof(struct pills) * 2);
     int temp;
-    char* str1 = (char*)malloc(sizeof(char) * 35);
-    char* str2 = (char*)malloc(sizeof(char) * 35);
+    char* str1;
+    char* str2;
     str1 = ("Aspirin 15.04.99 125 1300\0");
     str2 = ("Insulin 17.02.05 130 1250\0"); 
     StrToStruct(test, str1);
