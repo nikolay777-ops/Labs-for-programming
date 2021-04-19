@@ -1,0 +1,23 @@
+name: Builder
+
+on:
+  push:
+    paths:
+     - 'Lab4/Lab4.2/**'
+    
+
+jobs:
+  build:
+
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: make
+      run: |
+            cd Lab4/Lab4.2
+            make Lab4.2Test
+    - run: |
+           cd Lab4/Lab4.2 
+           ./Lab4.2Test
