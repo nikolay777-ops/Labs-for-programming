@@ -36,8 +36,8 @@ void ThirdTest()
 {
     struct pills* test = (struct pills*)malloc(sizeof(struct pills) * 2);
     int temp;
-    char str1 = "Aspirin 15.04.99 125 1300";
-    char str2 = "Insulin 17.02.05 130 1250"; 
+    char str1[] = "Aspirin 15.04.99 125 1300";
+    char str2[] = "Insulin 17.02.05 130 1250"; 
     StrToStruct(test, str1);
     StrToStruct(test, str2);
     temp = OverDuePills(test);
