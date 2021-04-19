@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include <conio.h>
 #include <stdbool.h>
 
 static char avgDate[9] = {"12.09.21"};
@@ -9,9 +8,9 @@ static int size = 0;
 
 struct pills
 {
-    char name[15];
-    char date[9];
-    int standards;
+	char name[15];
+	char date[9];
+    	int standards;
 	int price;
 };
 
@@ -123,35 +122,35 @@ void Empty(char* str)
 
 void StrToStruct(struct pills* all, char* str)
 {
-    int i = 0;
-    int j = 0;
-    char* stndrd;
+    	int i = 0;
+    	int j = 0;
+    	char* stndrd;
 	char* prc;
 	stndrd = (char*)malloc(sizeof(char) * 5);
-    CheckArray(stndrd);
+   	CheckArray(stndrd);
 	prc = (char*)malloc(sizeof(char) * 5);
-    CheckArray(prc);
-    while(str[i] != ' ')
-    {
-        all[size].name[i] = str[i];
-        i++;
-    }
-    i++;
-    while(str[i] != ' ')
-    {
-        all[size].date[j] = str[i];
-        j++;
-        i++;
-    }
-    i++;
-    j = 0;
-    while(str[i] != ' ')
-    {
-        stndrd[j] = str[i];
-        j++;
-        i++;
-    }
-    i++;
+    	CheckArray(prc);
+    	while(str[i] != ' ')
+    	{
+        	all[size].name[i] = str[i];
+        	i++;
+    	}
+    	i++;
+    	while(str[i] != ' ')
+    	{
+        	all[size].date[j] = str[i];
+        	j++;
+        	i++;
+    	}
+    	i++;
+    	j = 0;
+    	while(str[i] != ' ')
+    	{	
+        	stndrd[j] = str[i];
+        	j++;
+        	i++;
+    	}
+    	i++;
 	j = 0;
 	while(str[i] != '\0')
 	{
@@ -161,7 +160,7 @@ void StrToStruct(struct pills* all, char* str)
 	}
 	all[size].standards = StoI(stndrd, StrSize(stndrd) - 1);
 	all[size].price = StoI(prc, StrSize(prc) - 1);
-    size++;
+    	size++;
 	free(stndrd);
 	free(prc);
 }
@@ -176,9 +175,9 @@ void Info(struct pills* all, int index)
 
 int OverDuePills(struct pills* all)
 {
-    int i;
-    int j;
-    int averageLose = 0;
+	int i;
+    	int j;
+    	int averageLose = 0;
 	int helper = 1;
 	int avgQuality;
 	int pillQuality;
@@ -259,7 +258,7 @@ int main()
 		printf("An error in writing file.");
 	}
 	printf("Enter an information about type of pills. (Enter for exit.)");
-    i = 0;
+    	i = 0;
 	do
 	{
 		fputs(gets(str), fp);
@@ -305,6 +304,6 @@ int main()
 	free(str);
 	free(allPills);
 	free(sizes);
-    return 0;
+    	return 0;
 }
 #endif
