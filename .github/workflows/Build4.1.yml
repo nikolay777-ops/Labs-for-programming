@@ -19,5 +19,5 @@ jobs:
             cd Lab4/Lab4.1
             make Lab4.1Test
     - run: |
-           cd Lab1 
+           cd Lab4/Lab4.1 
            ./Lab4.1Test
