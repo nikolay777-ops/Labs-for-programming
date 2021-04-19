@@ -1,4 +1,5 @@
 #include "Lab4.2.h" 
+#include <assert.h>
 
 static int size = 0;
 
