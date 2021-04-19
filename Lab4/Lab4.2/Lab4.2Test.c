@@ -43,7 +43,6 @@ void ThirdTest()
     StrToStruct(test, str2);
     temp = OverDuePills(test);
     printf("%d", temp);
-    //assert(temp == 325000);
     free(test);
 }
 
