@@ -42,7 +42,7 @@ void ThirdTest()
     StrToStruct(test, str1);
     StrToStruct(test, str2);
     temp = OverDuePills(test);
-    assert(temp == 3221440);
+    assert(temp == 325000);
     free(test);
 }
 
