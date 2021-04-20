@@ -253,7 +253,7 @@ int main()
 		printf("Error with int massive");
 		exit(1);
 	}
-	if ((fp = fopen("E:\\Trash\\Lab4.2\\pls.txt", "w")) == NULL)
+	if ((fp = fopen("pills.txt", "w")) == NULL)
 	{
 		printf("An error in writing file.");
 	}
@@ -269,7 +269,7 @@ int main()
 	}
 	while(StrSize(str) != 0);
 	fclose(fp);
-	if((fp = fopen("E:\\Trash\\Lab4.2\\pills.txt", "r")) == NULL)
+	if((fp = fopen("pills.txt", "r")) == NULL)
 	{
 		printf("An error in opening file.");
 		exit(1);
