@@ -1,0 +1,24 @@
+name: Builder
+
+on:
+  push:
+    paths:
+     - 'Lab5/**'
+    
+
+jobs:
+  build:
+
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+    - uses: actions/checkout@v2
+    
+    - name: Install Valgrind
+      run: |
+           sudo apt install Valgrind
+    
+    - name: Testing all
+      run: | make TestAll -C Lab5
