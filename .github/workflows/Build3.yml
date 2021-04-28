@@ -17,4 +17,4 @@ jobs:
     - name: make
       run: |
             cd Lab3
-            make TestAll
+            make TestAll -С Lab3
