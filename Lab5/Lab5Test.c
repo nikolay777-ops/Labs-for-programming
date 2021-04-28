@@ -32,8 +32,8 @@ void FirstTest()
 void SecondTest()
 {
     Queue* queue;
-    queue = (Queue*)malloc(sizeof(Queue));
     int i;
+    queue = (Queue*)malloc(sizeof(Queue));
     Init(queue);
     for (i = 0; i < 30; i++)
     {
