@@ -9,7 +9,6 @@ on:
 jobs:
   build:
 
-
     runs-on: ubuntu-latest
 
     steps:
@@ -19,7 +18,6 @@ jobs:
     - name: Install Valgrind
       run: |
            sudo apt install Valgrind
-    
     - name: Testing all
       run: | 
-        make TestAll -C Lab5/
+           make TestAll -C Lab5/
