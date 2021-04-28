@@ -19,4 +19,3 @@ bool ExistingBackMatrix(float **matrix, int size);
 void GetMatrix(float** matrix, int **p, int i, int j, int m);
 
 int Determinant(float** matrix, int size);
-
