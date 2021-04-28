@@ -1,23 +1,23 @@
-name: Builder
+name: build-and-test
 
-on:
+on: 
   push:
     paths:
-     - 'Lab5/**'
-    
+    - 'Lab5/**'
 
 jobs:
-  build:
+
+  BuildAndTest:
 
     runs-on: ubuntu-latest
-
     steps:
-    - name: Checkout code
-    - uses: actions/checkout@v2
     
-    - name: Install Valgrind
+    - name: Checkout code
+      uses: actions/checkout@v2
+      
+    - name: Install Valgring
       run: |
-           sudo apt install Valgrind
-    - name: Testing all
-      run: | 
-           make TestAll -C Lab5/
+          sudo apt install valgrind
+          
+    - name: Testing
+      run: make TESTALL -C Lab5
