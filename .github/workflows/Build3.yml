@@ -3,7 +3,7 @@ name: build-and-test
 on: 
   push:
     paths:
-    - 'Lab5/**'
+    - 'Lab3/**'
 
 jobs:
 
