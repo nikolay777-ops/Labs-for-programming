@@ -21,4 +21,5 @@ jobs:
            sudo apt install Valgrind
     
     - name: Testing all
-      run: | make TestAll -C Lab5
+      run: | 
+        make TestAll -C Lab5/
