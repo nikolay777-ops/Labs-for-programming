@@ -6,3 +6,4 @@ Valgrind:
 	valgrind ./Lab5
 	valgrind ./Lab5Test
 TestAll: Lab5 Lab5Test Valgrind
+
