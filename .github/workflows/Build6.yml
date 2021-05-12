@@ -4,9 +4,12 @@ on:
   push:
     paths:
      - 'Lab6/**'
+    
 
 jobs:
   build:
+
+
     runs-on: ubuntu-latest
 
     steps:
@@ -15,4 +18,6 @@ jobs:
       run: |
             cd Lab6
             make Lab6Test
-            ./Lab6Test
+    - run: |
+           cd Lab6 
+           ./Lab6Test
