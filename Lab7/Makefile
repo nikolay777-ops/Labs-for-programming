@@ -1,4 +1,2 @@
 Genres:
-	gcc -ansi Genres.c main.h main.c -o test
-	./test
-	
+	gcc -ansi Genres.c main.h main.c -o gener
