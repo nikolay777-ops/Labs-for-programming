@@ -1,0 +1,17 @@
+name: Builder
+
+on:
+  push:
+    paths:
+     - 'Lab7/**'
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: make
+      run: |
+            cd Lab7
+            make Genres
+            ./gener
