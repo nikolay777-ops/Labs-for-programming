@@ -169,7 +169,7 @@ void ClearAll(GenersList** list)
 	*list = NULL;
 }
 
-/*int main()
+int main()
 {
    	GenersList* geners;
 	geners = ListCr();
@@ -180,4 +180,3 @@ void ClearAll(GenersList** list)
 	ClearAll(&geners);
 	return 0;
 }
-*/
