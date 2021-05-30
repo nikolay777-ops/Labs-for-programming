@@ -162,7 +162,7 @@ void PerfClear(PerfList** list)
     }
     free(*list); *list = NULL;
 }
-
+/*
 int main()
 {
     PerfList* list;
@@ -175,4 +175,4 @@ int main()
     PerfClear(&list);	
     free(gen);
     return 0;
-}
+}*/
