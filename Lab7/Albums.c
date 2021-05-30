@@ -259,22 +259,18 @@ char* IntToStr(int num)
 	return str;
 }
 
-/*
+
 int main()
 {
 	AlbList* albs = NULL;
 	AlbList* search = NULL;
 	AlbNode* nodeSearch = NULL;
-	nodeSearch->
 	AlbInit(&search);
 	AlbInit(&albs);
 	AllAlbums(&albs);
-	SearchByAlbum(&search, "Kamikaze");
-	assert(nodeSearch != NULL);
-	assert(strncmp(nodeSearch->name, "Kamikaze") == 0);
-	SearchByPerformer(&list, "Louis Armstrong");
-	assert(list->head != NULL);
-	assert(strncmp(list->head->name, "Louis Armstrong", 3) == 0);
+	nodeSearch = SearchByAlbum(&search, "Kamikaze");
+	search = SearchByPerformer(&list, "Louis Armstrong");
 	ClearAlb(&albs);
+	ClearAlb(&search)
 	return 0;
-}*/
+}
