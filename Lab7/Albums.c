@@ -12,7 +12,7 @@ long FindPos(char* str)
 	FILE *fp;
 	char* temp = (char*)malloc(sizeof(char) * 36);
 	long pos = 0;
-	if (!(fp = fopen("Albums.txt", "r")))
+	if (!(fp = fopen("Lab7\\Albums.txt", "r")))
 	{
 		printf("An error with opening Albums.txt");
 		exit(1);
@@ -36,7 +36,7 @@ void CompPush(CompList** list, long* pos)
 	FILE *pf;
 	char* temp;
 	CompNode* point = (*list)->head;
-	if (!(pf = fopen("Albums.txt", "r")))
+	if (!(pf = fopen("Lab7\\Albums.txt", "r")))
 	{
 		printf("An error with opening Albums.txt");
 		exit(1);
@@ -75,7 +75,7 @@ void AlbPush(AlbList** list, char* str, long* pos)
 	AlbNode* temporary = NULL;
 	int i = 0;
 	srand(time(NULL));
-	if (!(fp = fopen("Albums.txt", "r")))
+	if (!(fp = fopen(":ab7\\Albums.txt", "r")))
 	{
 		printf("An error with opening Albums.txt");
 		exit(1);
@@ -141,7 +141,7 @@ void Alb(AlbList** list, char* str)
 	long pos = 0;
 	char* temp = (char*)malloc(sizeof(char) * 37);
 	pos = FindPos(str);
-	if (!(pf = fopen("Albums.txt", "r")))
+	if (!(pf = fopen("Lab7\\Albums.txt", "r")))
 	{
 		printf("An error with Albums.txt");
 		exit(1);
