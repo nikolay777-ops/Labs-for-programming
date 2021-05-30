@@ -14,7 +14,7 @@ void AddInfo(PerfNode* node, char* ID, long *curPos)
     FILE *fp;
     char* temp;
     node->genID = ID;
-    if (!(fp = fopen("Perf.txt", "r")))
+    if (!(fp = fopen("Performances.txt", "r")))
     {
         printf("Error with Perf.txt");
         exit(1);
