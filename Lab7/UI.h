@@ -13,7 +13,7 @@ struct User
 struct UserList
 {
     struct User* head;
-    User* tail;
+    struct User* tail;
     int size;
 };
 
