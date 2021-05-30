@@ -14,10 +14,10 @@ void AddInfo(PerfNode* node, char* ID, long *curPos)
     FILE *fp;
     char* temp;
     node->genID = ID;
-    if (!(fp = fopen("Performances.txt", "r")))
+    if (!(fp = fopen("Perf.txt", "r")))
     {
         printf("Error with Perf.txt");
-        exit(10);
+        exit(1);
     }
     else
     {
@@ -64,7 +64,7 @@ PerfList* PerfCr(PerfList** list)
     if (!gen)
     {
         printf("Memory problem.");
-        exit(2);
+        exit(1);
     }
     *list = NULL;
     gen = "-HHP\0";
@@ -75,7 +75,7 @@ PerfList* PerfCr(PerfList** list)
     if (!gen)
     {
         printf("Memory problem.");
-        exit(3);
+        exit(1);
     }
     gen = "-ELEC\0";
     PerfPush(&(*list), gen);
@@ -85,7 +85,7 @@ PerfList* PerfCr(PerfList** list)
     if (!gen)
     {
         printf("Memory problem.");
-        exit(4);
+        exit(1);
     }
     gen = "-BLU\0";
     PerfPush(&(*list), gen);
@@ -95,7 +95,7 @@ PerfList* PerfCr(PerfList** list)
     if (!gen)
     {
         printf("Memory problem.");
-        exit(5);
+        exit(1);
     }
     gen = "-JZ\0";
     PerfPush(&(*list), gen);
@@ -166,13 +166,22 @@ void PerfClear(PerfList** list)
 int main()
 {
     PerfList* list;
+	printf("A");
     char* gen;
+	printf("A");
     gen = (char*)malloc(sizeof(char) * 20);
+	printf("A");
     gen = "Kanye\0";
+	printf("A");
     list = PerfCr(&list);
+	printf("A");
     SearchID(&list, "-HHP");
+	printf("A");
     SearchName(&list, gen);
+	printf("A");
     PerfClear(&list);	
+	printf("A");
     free(gen);
+	printf("A");
     return 0;
 }
