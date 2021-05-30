@@ -2,9 +2,9 @@
 
 long curPos = 0;
 
-bool GenExists(GenersList* list, char* str)
+bool GenExists(struct GenersList* list, char* str)
 {
-	GenersNode* temp;
+	struct GenersNode* temp;
 	for (temp = list->head; temp != NULL; temp = temp->next)
 	{
 		if (temp->ID == str)
@@ -13,9 +13,9 @@ bool GenExists(GenersList* list, char* str)
 	return false;
 }
 
-GenersNode* GenSearch(GenersList* list, char* str)
+struct GenersNode* GenSearch(struct GenersList* list, char* str)
 {
-	GenersNode* temp;
+	struct GenersNode* temp;
 	for (temp = list->head; temp != list->tail; temp = temp->next)
 	{
 		if (temp->ID == str)
@@ -26,10 +26,10 @@ GenersNode* GenSearch(GenersList* list, char* str)
 	return NULL;
 }
 
-GenersNode* GenCr(GenersNode* node)
+struct GenersNode* GenCr(struct GenersNode* node)
 {
 	int i;
-	node = (GenersNode*)malloc(sizeof(GenersNode));
+	node = (struct GenersNode*)malloc(sizeof(struct GenersNode));
 	node->next = NULL;
 	node->article = (char**)malloc(sizeof(char*) * 4);
 	for (i = 0; i < 4; i++)
@@ -39,13 +39,13 @@ GenersNode* GenCr(GenersNode* node)
 	return node;
 }
 
-void SetArticle(GenersNode* node, long* curPos)
+void SetArticle(struct GenersNode* node, long* curPos)
 {   
-	FILE *pp;
+    FILE *pp;
     int i;
     if (!(pp = fopen("Article.txt", "r")))
     {
-        printf("lox");
+        printf("Problems with Article.txt");
         exit(1);
     }
     else
@@ -53,22 +53,22 @@ void SetArticle(GenersNode* node, long* curPos)
         fseek(pp, *curPos, 0);
         for (i = 0; i < 4; i++)
         {
-			fgets(node->article[i], 71, pp);
-			fflush(stdin);
+		fgets(node->article[i], 71, pp);
+		fflush(stdin);
         }
         *curPos = ftell(pp);
         fclose(pp);   
     }
 }
 
-void GenPush(GenersList** list, char* str)
+void GenPush(struct GenersList** list, char* str)
 {
 	char* temp;
 	int i;
 	i = 0;
 	if(!(*list))
 	{
-		*list = (GenersList*)malloc(sizeof(GenersList));
+		*list = (struct GenersList*)malloc(sizeof(struct GenersList));
 		(*list)->head = GenCr((*list)->head);
 		(*list)->head->ID = str;
 		SetArticle((*list)->head, &curPos);
@@ -77,8 +77,8 @@ void GenPush(GenersList** list, char* str)
 	}
 	else
 	{
-		GenersNode* buf = NULL;
-		GenersNode* help = (*list)->head;
+		struct GenersNode* buf = NULL;
+		struct GenersNode* help = (*list)->head;
 		buf = GenCr(buf);
 		buf->ID = str;
 		SetArticle(buf, &curPos);
@@ -91,10 +91,10 @@ void GenPush(GenersList** list, char* str)
 	}
 }
 
-GenersList* ListCr()
+struct GenersList* ListCr()
 {
 	FILE *fp;
-	GenersList* geners;
+	struct GenersList* geners;
 	int i;
 	char* str;
 	str = NULL;
@@ -119,9 +119,9 @@ GenersList* ListCr()
 	return geners;
 }
 
-void GenInfo(GenersList** geners, int num)
+void GenInfo(struct GenersList** geners, int num)
 {
-	GenersNode* temp;
+	struct GenersNode* temp;
 	int i;
 	int j;
 	num--;
@@ -145,10 +145,10 @@ void GenInfo(GenersList** geners, int num)
 	}
 }
 
-void ClearAll(GenersList** list)
+void ClearAll(struct GenersList** list)
 {
 	int i, j;
-	GenersNode* temp;
+	struct GenersNode* temp;
 	i = 0; j = 0;
 	temp = NULL;
 	do
