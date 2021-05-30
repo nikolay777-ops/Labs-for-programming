@@ -14,23 +14,8 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - name: GenresTest
-      run: |
-            cd Lab7
-            make Genres
-            ./gen
     - name: Perfomances
       run: | 
             cd Lab7
             make Perfomances
             ./perfoTest
-    - name: Albums
-      run: |
-            cd Lab7
-            make Albums
-            ./albumsTest
-    - name: UI
-      run: | 
-            cd Lab7
-            make UI
-            ./uiTest
