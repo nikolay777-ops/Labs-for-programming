@@ -93,6 +93,6 @@ void TestAll()
 
 int main()
 {
-    UITest();
+    GenresTest();
     return 0;
 }
