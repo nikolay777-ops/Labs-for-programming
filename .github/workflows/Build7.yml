@@ -17,5 +17,5 @@ jobs:
     - name: make
       run: |
             cd Lab7
-            make Genres
-            ./gen
+            make thend
+            ./thEND
