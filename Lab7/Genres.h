@@ -6,14 +6,14 @@ typedef struct GenersNode
 	char** article;
 	struct GenersNode* next;
 	struct GenersNode* prev;
-}GenersNode;
+};
 
 typedef struct GenersList
 {
 	GenersNode* head;
 	GenersNode* tail;
 	int size;
-}GenersList;
+};
 
 bool GenExists(GenersList* list, char* str);
 
