@@ -1,0 +1,100 @@
+-Yeezus
+
+price: 2
+Copies sold: 1
+Life of Pablo$
+
+price: 2
+Copies sold: 1
+Two of Us Are Dying
+
+price: 2
+Copies sold: 0
+Killmart$
+
+price: 2
+Copies sold: 0
+Eminem Show
+
+price: 2
+Copies sold: 0
+Kamikaze$
+
+price: 2
+Copies sold: 0
+7
+
+price: 2
+Copies sold: 0
+New Rave$
+
+price: 2
+Copies sold: 0
+Music Is The Weapon
+
+price: 2
+Copies sold: 0
+Know No Better$
+
+price: 2
+Copies sold: 0
+TIM
+
+price: 2
+Copies sold: 0
+Stories$
+
+price: 2
+Copies sold: 0
+London Howlin' Wolf Sessions
+
+price: 2
+Copies sold: 0
+Super Super Blues Band$
+
+price: 2
+Copies sold: 0
+Let's Boogie Woogie All Night Long
+
+price: 2
+Copies sold: 0
+Everyday I Have The Blues$
+
+price: 2
+Copies sold: 0
+John's and Louis' Blues$
+
+price: 2
+Copies sold: 0
+Louis and the Good Book
+
+price: 2
+Copies sold: 0
+Top Hat, White Tie and Tails
+
+price: 2
+Copies sold: 0
+Miles Davis$
+
+price: 2
+Copies sold: 0
+Kind of Blue
+
+price: 2
+Copies sold: 0
+Bitches Brew$
+
+price: 2
+Copies sold: 0
+All or Nothing at All
+
+price: 2
+Copies sold: 0
+Body and Soul$
+
+price: 2
+Copies sold: 0
+Total copies: 
+2
+Total profit: 
+4
