@@ -7,7 +7,7 @@ typedef struct PerfNode
 	char* year;
 	struct PerfNode* next;
 	struct PerfNode* prev;
-}PerfNode;
+};
 
 typedef struct PerfList
 {
@@ -15,7 +15,7 @@ typedef struct PerfList
 	PerfNode* tail;
 	int size;
 	long curPos;
-}PerfList;
+};
 
 PerfNode* NodeInit(PerfNode* node);
 
