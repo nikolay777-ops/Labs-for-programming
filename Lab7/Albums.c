@@ -271,6 +271,6 @@ int main()
 	nodeSearch = SearchByAlbum(&search, "Kamikaze");
 	search = SearchByPerformer(&list, "Louis Armstrong");
 	ClearAlb(&albs);
-	ClearAlb(&search)
+	ClearAlb(&search);
 	return 0;
 }
