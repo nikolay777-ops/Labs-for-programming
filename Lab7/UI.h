@@ -8,14 +8,14 @@ typedef struct User
     struct User* next;
     struct User* prev;
     int totalSum;
-}User;
+};
 
 typedef struct UserList
 {
     User* head;
     User* tail;
     int size;
-}UserList;
+};
 
 void Start(AlbList** list, User* user, int i, char* str);
 
