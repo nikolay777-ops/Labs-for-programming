@@ -163,7 +163,7 @@ void PerfClear(PerfList** list)
     free(*list); *list = NULL;
 }
 
-/*int main()
+int main()
 {
     PerfList* list;
     char* gen;
@@ -174,4 +174,4 @@ void PerfClear(PerfList** list)
     SearchName(&list, gen);
     PerfClear(&list);
     return 0;
-}*/
+}
