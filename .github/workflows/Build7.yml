@@ -23,7 +23,7 @@ jobs:
       run: | 
             cd Lab7
             make Perfomances
-            ./perf
+            ./perfoTest
     - name: Albums
       run: |
             cd Lab7
