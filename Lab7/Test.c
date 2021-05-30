@@ -93,6 +93,6 @@ void TestAll()
 
 int main()
 {
-    GenresTest();
+    PerfomancesTest();
     return 0;
 }
