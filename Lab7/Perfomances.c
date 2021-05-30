@@ -64,7 +64,7 @@ PerfList* PerfCr(PerfList** list)
     if (!gen)
     {
         printf("Memory problem.");
-        exit(1);
+        exit(2);
     }
     *list = NULL;
     gen = "-HHP\0";
@@ -75,7 +75,7 @@ PerfList* PerfCr(PerfList** list)
     if (!gen)
     {
         printf("Memory problem.");
-        exit(1);
+        exit(3);
     }
     gen = "-ELEC\0";
     PerfPush(&(*list), gen);
@@ -95,7 +95,7 @@ PerfList* PerfCr(PerfList** list)
     if (!gen)
     {
         printf("Memory problem.");
-        exit(1);
+        exit(4);
     }
     gen = "-JZ\0";
     PerfPush(&(*list), gen);
