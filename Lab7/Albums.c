@@ -259,7 +259,7 @@ char* IntToStr(int num)
 	return str;
 }
 
-
+/*
 int main()
 {
 	AlbList* albs = NULL;
@@ -274,3 +274,4 @@ int main()
 	ClearAlb(&search);
 	return 0;
 }
+*/
