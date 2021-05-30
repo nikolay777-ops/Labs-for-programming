@@ -1,7 +1,7 @@
 Genres:
 	gcc Genres.h Genres.c main.h main.c -o gen -D=TESTING
 Perfomances:
-	gcc Perfomances.h Perfomances.c -o perfoTest 
+	gcc -pedantic Perfomances.h Perfomances.c main.h main.c -o perfoTest 
 Albums:
 	gcc -pedantic Albums.c Albums.h main.c main.h -o albumsTest
 UI:
