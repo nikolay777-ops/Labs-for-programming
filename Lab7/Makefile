@@ -13,3 +13,4 @@ UI:
 thend:
 	gcc -pedantic Test.c Test.h UI.c UI.h main.c main.h Albums.c Albums.h Genres.c Genres.h Perfomances.c Perfomances.h -o thEND -D=TESTING
 	./thEND
+	
