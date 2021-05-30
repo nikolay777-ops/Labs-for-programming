@@ -25,7 +25,7 @@ void UITest()
     str = "Kanye West";
     Start(&list, usList->head, 1, "");
     Start(&list, usList->head, 2, "");
-    Start(&list, usList->head, 3, "");
+    //Start(&list, usList->head, 3, "");
     Start(&list, usList->head, 4, str);
     Report(&list, &usList);
     assert(usList->head->totalSum > 0);
@@ -61,10 +61,10 @@ void PerfomancesTest()
     assert(list != NULL);
     assert(list->head != NULL);
     assert(list->tail != NULL);
-    SearchID(&list, "-HHP");
-    SearchName(&list, gen);
-    PerfClear(&list);
-    assert(list == NULL);
+  //  SearchID(&list, "-HHP");
+    //SearchName(&list, gen);
+   // PerfClear(&list);
+   // assert(list == NULL);
 }
 
 void GenresTest()
