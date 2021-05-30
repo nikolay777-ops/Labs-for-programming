@@ -269,7 +269,7 @@ int main()
 	AlbInit(&albs);
 	AllAlbums(&albs);
 	nodeSearch = SearchByAlbum(&search, "Kamikaze");
-	search = SearchByPerformer(&list, "Louis Armstrong");
+	search = SearchByPerformer(&albs, "Louis Armstrong");
 	ClearAlb(&albs);
 	ClearAlb(&search);
 	return 0;
