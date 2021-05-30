@@ -1,8 +1,8 @@
 #include "Albums.h"
 
-void AlbInit(AlbList** list)
+void AlbInit(struct AlbList** list)
 {
-	*list = (AlbList*)malloc(sizeof(AlbList));
+	*list = (struct AlbList*)malloc(sizeof(struct AlbList));
 	(*list)->head = NULL;
 	(*list)->tail = NULL;
 }
@@ -12,7 +12,7 @@ long FindPos(char* str)
 	FILE *fp;
 	char* temp = (char*)malloc(sizeof(char) * 36);
 	long pos = 0;
-	if (!(fp = fopen("Lab7\\Albums.txt", "r")))
+	if (!(fp = fopen("Albums.txt", "r")))
 	{
 		printf("An error with opening Albums.txt");
 		exit(1);
@@ -31,12 +31,12 @@ long FindPos(char* str)
 	return pos;
 }
 
-void CompPush(CompList** list, long* pos)
+void CompPush(struct CompList** list, long* pos)
 {
 	FILE *pf;
 	char* temp;
-	CompNode* point = (*list)->head;
-	if (!(pf = fopen("Lab7\\Albums.txt", "r")))
+	struct CompNode* point = (*list)->head;
+	if (!(pf = fopen("Albums.txt", "r")))
 	{
 		printf("An error with opening Albums.txt");
 		exit(1);
@@ -56,7 +56,7 @@ void CompPush(CompList** list, long* pos)
 			}
 			point->name = temp;
 			fflush(stdin);
-			point->next = (CompNode*)malloc(sizeof(CompNode));
+			point->next = (struct CompNode*)malloc(sizeof(struct CompNode));
 			point->next->next = NULL;
 			point->next->prev = point;
 			point = point->next;
@@ -68,14 +68,14 @@ void CompPush(CompList** list, long* pos)
 	}
 }
 
-void AlbPush(AlbList** list, char* str, long* pos)
+void AlbPush(struct AlbList** list, char* str, long* pos)
 {
 	FILE *fp;
 	char* temp;
-	AlbNode* temporary = NULL;
+	struct AlbNode* temporary = NULL;
 	int i = 0;
 	srand(time(NULL));
-	if (!(fp = fopen(":ab7\\Albums.txt", "r")))
+	if (!(fp = fopen("Albums.txt", "r")))
 	{
 		printf("An error with opening Albums.txt");
 		exit(1);
@@ -85,15 +85,15 @@ void AlbPush(AlbList** list, char* str, long* pos)
 		if (!(*list)->head)
 		{
 			fseek(fp, *pos, 0);
-			(*list)->head = (AlbNode*)malloc(sizeof(AlbNode));
+			(*list)->head = (struct AlbNode*)malloc(sizeof(struct AlbNode));
 			(*list)->head->next = NULL;
 			(*list)->head->perfID = (char*)malloc(sizeof(char) * 4);
 			strncpy((*list)->head->perfID, str, 3);
 			temp = (char*)malloc(sizeof(char) * 40);
 			fgets(temp, 36, fp);
 			fflush(stdin);
-			(*list)->head->compos = (CompList*)malloc(sizeof(CompList));
-			(*list)->head->compos->head = (CompNode*)malloc(sizeof(CompNode));
+			(*list)->head->compos = (struct CompList*)malloc(sizeof(struct CompList));
+			(*list)->head->compos->head = (struct CompNode*)malloc(sizeof(struct CompNode));
 			(*list)->head->name = temp;
 			*pos = ftell(fp);
 			CompPush(&((*list)->head->compos), pos);
@@ -108,7 +108,7 @@ void AlbPush(AlbList** list, char* str, long* pos)
 			while(temporary->next != NULL)
 				temporary = temporary->next;
 			fseek(fp, *pos, 0);
-			temporary->next = (AlbNode*)malloc(sizeof(AlbNode));
+			temporary->next = (struct AlbNode*)malloc(sizeof(struct AlbNode));
 			temporary->next->next = NULL;
 			temporary->next->perfID = (char*)malloc(sizeof(char) * 4);
 			strncpy(temporary->next->perfID, str, 3);
@@ -119,8 +119,8 @@ void AlbPush(AlbList** list, char* str, long* pos)
 			}while(StrSize(temp) != 0);
 			fgets(temp, 36, fp);
 			fflush(stdin);
-			temporary->next->compos = (CompList*)malloc(sizeof(CompList));
-			temporary->next->compos->head = (CompNode*)malloc(sizeof(CompNode));
+			temporary->next->compos = (struct CompList*)malloc(sizeof(struct CompList));
+			temporary->next->compos->head = (struct CompNode*)malloc(sizeof(struct CompNode));
 			temporary->next->name = temp;
 			temporary->next->bought = 0;
 			temporary->next->price = rand() % 100;
@@ -141,7 +141,7 @@ void Alb(AlbList** list, char* str)
 	long pos = 0;
 	char* temp = (char*)malloc(sizeof(char) * 37);
 	pos = FindPos(str);
-	if (!(pf = fopen("Lab7\\Albums.txt", "r")))
+	if (!(pf = fopen("Albums.txt", "r")))
 	{
 		printf("An error with Albums.txt");
 		exit(1);
@@ -159,12 +159,12 @@ void Alb(AlbList** list, char* str)
 	free(temp);
 }
 
-AlbList* SearchByPerformer(AlbList** list, char* name)
+struct AlbList* SearchByPerformer(struct AlbList** list, char* name)
 {
-	AlbNode* temp = (*list)->head;
-	AlbList* performer = (AlbList*)malloc(sizeof(AlbList));
-	performer->head = (AlbNode*)malloc(sizeof(AlbNode));
-	performer->head->next = (AlbNode*)malloc(sizeof(AlbNode));
+	struct AlbNode* temp = (*list)->head;
+	struct AlbList* performer = (struct AlbList*)malloc(sizeof(struct AlbList));
+	performer->head = (struct AlbNode*)malloc(sizeof(struct AlbNode));
+	performer->head->next = (struct AlbNode*)malloc(sizeof(struct AlbNode));
 	while(strncmp(temp->perfID, name, 3) != 0)
 		temp = temp->next;
 	performer->head = temp;
@@ -176,9 +176,9 @@ AlbList* SearchByPerformer(AlbList** list, char* name)
 	return performer;
 }
 
-AlbNode* SearchByAlbum(AlbList** list, char* str)
+struct AlbNode* SearchByAlbum(struct AlbList** list, char* str)
 {
-	AlbNode* temp = (*list)->head;
+	struct AlbNode* temp = (*list)->head;
 	while(strncmp(temp->name, str, 3) != 0)
 	{	
 		temp = temp->next;
@@ -186,9 +186,9 @@ AlbNode* SearchByAlbum(AlbList** list, char* str)
 	return temp;
 }
 
-void ClearCompose(CompList** list)
+void ClearCompose(struct CompList** list)
 {
-    CompNode* temp = (*list)->head;
+   	struct CompNode* temp = (*list)->head;
 	if (!(*list)) return;
 	while(temp != NULL)
 	{
@@ -198,9 +198,9 @@ void ClearCompose(CompList** list)
 	free(*list); *list = NULL;
 }
 
-void ClearAlb(AlbList** list)
+void ClearAlb(struct AlbList** list)
 {
-    AlbNode* temp = (*list)->head;
+    	struct AlbNode* temp = (*list)->head;
 	if (!(*list)) return;
 	while (temp != NULL)
 	{
@@ -212,9 +212,9 @@ void ClearAlb(AlbList** list)
     free(*list); *list = NULL;
 }
 
-void AlbInfo(AlbNode* node)
+void AlbInfo(struct AlbNode* node)
 {
-	CompNode* temp = node->compos->head;
+	struct CompNode* temp = node->compos->head;
 	printf("name: %s", node->name);
 	printf("price: %s\n", IntToStr(node->price));
 	while(temp != NULL)
@@ -224,7 +224,7 @@ void AlbInfo(AlbNode* node)
 	}
 }
 
-void AllAlbums(AlbList** albums)
+void AllAlbums(struct AlbList** albums)
 {
 	AlbInit(albums);
 	Alb(albums, "Kanye West");
