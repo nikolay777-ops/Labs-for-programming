@@ -4,7 +4,7 @@
 void UITest()
 {
     struct AlbList* list = NULL;
-    struct UserList* usList;
+    struct UserList* usList = NULL;
     char* str = (char*)malloc(sizeof(char) * 21);
     assert(str != NULL);
     AlbInit(&list);
@@ -93,6 +93,6 @@ void TestAll()
 
 int main()
 {
-    AlbumsTest();
+    UITest();
     return 0;
 }
