@@ -5,14 +5,14 @@ typedef struct CompNode
 	char* name;
 	struct CompNode* next;
 	struct CompNode* prev;
-}CompNode;
+};
 
 typedef struct CompList
 {
 	CompNode* head;
 	CompNode* tail;
 	int size;
-}CompList;
+};
 
 typedef struct AlbNode
 {
@@ -23,14 +23,14 @@ typedef struct AlbNode
 	struct AlbNode* prev;
 	int price;
 	int bought;
-}AlbNode;
+};
 
 typedef struct AlbList
 {
 	AlbNode* head;
 	AlbNode* tail;
 	int size;
-}AlbList;
+};
 
 void AlbInit(AlbList** list);
 
