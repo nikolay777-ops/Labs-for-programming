@@ -1,6 +1,6 @@
 #include "UI.h"
 
-void Start(AlbList** list, User* user, int i, char* str)
+void Start(struct AlbList** list, struct User* user, int i, char* str)
 {
     printf("Hello! mp3ALL.com glad to see you!\n");
     printf("There you can learn something new about music genres, \n");
@@ -28,8 +28,8 @@ void Start(AlbList** list, User* user, int i, char* str)
 
 void ShowGenres()
 {
-    GenersList* geners;
-	GenersNode* node;
+    struct GenersList* geners;
+    struct GenersNode* node;
     int i = 1;
     geners = ListCr();
     node = geners->head;
@@ -44,7 +44,7 @@ void ShowGenres()
 
 void GenresInfo()
 {
-    GenersList* geners;
+    	struct GenersList* geners;
 	geners = ListCr();
 	GenInfo(&geners, 1);
 	GenInfo(&geners, 2);
@@ -55,7 +55,7 @@ void GenresInfo()
 
 void PerfomancesAction(int i, char* str)
 {
-    PerfList* perf;
+    struct PerfList* perf;
     perf = PerfCr(&perf);
     printf("1.Show All\n");
     printf("2.Show by name\n");   
@@ -78,11 +78,11 @@ void PerfomancesAction(int i, char* str)
     free(str);
 }
 
-void AlbumsAction(AlbList** list, User* user, char* str, int i)
+void AlbumsAction(struct AlbList** list, struct User* user, char* str, int i)
 {
-    AlbList* search;
-    printf("Please write the name of performer.");  
-    search = SearchByPerformer(list, str);
+    	struct AlbList* search = NULL;
+    	printf("Please write the name of performer.");  
+    	search = SearchByPerformer(list, str);
 	AlbInfo(search->head);
 	printf("\nDo you want to buy such album? (Yes/1, No/0)\n");
 	if (i == 1)
@@ -93,18 +93,18 @@ void AlbumsAction(AlbList** list, User* user, char* str, int i)
 	AlbInfo(search->head->next);
 	printf("\nDo you want to buy such album? (Yes/1, No/0)\n");
 	if (i == 1)
-    {
-        search->head->next->bought++;
-        user->totalSum += search->head->next->price;
-    }
+    	{
+        	search->head->next->bought++;
+        	user->totalSum += search->head->next->price;
+    	}
 	free(str);
 }
 
-void Report(AlbList** list, UserList** usList)
+void Report(struct AlbList** list, struct UserList** usList)
 {
     FILE *fp;
-    AlbNode* node = (*list)->head;
-    User* usNode = (*usList)->head;
+    struct AlbNode* node = (*list)->head;
+    struct User* usNode = (*usList)->head;
     int totalCash = 0;
     int totalAlbums = 0;
     while(usNode != NULL)
