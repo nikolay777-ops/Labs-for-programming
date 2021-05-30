@@ -1,59 +1,59 @@
 #include "main.h"
 
-typedef struct CompNode
+struct CompNode
 {
 	char* name;
 	struct CompNode* next;
 	struct CompNode* prev;
 };
 
-typedef struct CompList
+struct CompList
 {
-	CompNode* head;
-	CompNode* tail;
+	struct CompNode* head;
+	struct CompNode* tail;
 	int size;
 };
 
-typedef struct AlbNode
+struct AlbNode
 {
 	char* perfID;
 	char* name;
-	CompList* compos;
+	struct CompList* compos;
 	struct AlbNode* next;
 	struct AlbNode* prev;
 	int price;
 	int bought;
 };
 
-typedef struct AlbList
+struct AlbList
 {
-	AlbNode* head;
-	AlbNode* tail;
+	struct AlbNode* head;
+	struct AlbNode* tail;
 	int size;
 };
 
-void AlbInit(AlbList** list);
+void AlbInit(struct AlbList** list);
 
 long FindPos(char* str);
 
-void CompPush(CompList** list, long* pos);
+void CompPush(struct CompList** list, long* pos);
 
-void AlbPush(AlbList** list, char* str, long* pos);
+void AlbPush(struct AlbList** list, char* str, long* pos);
 
-void Alb(AlbList** list, char* str);
+void Alb(struct AlbList** list, char* str);
 
-AlbList* SearchByPerformer(AlbList** list, char* name);
+struct AlbList* SearchByPerformer(struct AlbList** list, char* name);
 
-AlbNode* SearchByAlbum(AlbList** list, char* str);
+struct AlbNode* SearchByAlbum(struct AlbList** list, char* str);
 
-AlbNode* SearchByCompose(AlbList** list, char* str);
+struct AlbNode* SearchByCompose(struct AlbList** list, char* str);
 
-void ClearCompose(CompList** list);
+void ClearCompose(struct CompList** list);
 
-void ClearAlb(AlbList** list);
+void ClearAlb(struct AlbList** list);
 
-void AlbInfo(AlbNode* node);
+void AlbInfo(struct AlbNode* node);
 
-void AllAlbums(AlbList** albums);
+void AllAlbums(struct AlbList** albums);
 
 char* IntToStr(int num);
