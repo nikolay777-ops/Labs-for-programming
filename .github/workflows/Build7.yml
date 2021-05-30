@@ -16,4 +16,6 @@ jobs:
     - uses: actions/checkout@v2
     - name: Albums
       run: | 
-        
+            cd Lab7
+            make thend
+            ./thEND
