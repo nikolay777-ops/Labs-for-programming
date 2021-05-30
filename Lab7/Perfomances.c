@@ -85,7 +85,7 @@ PerfList* PerfCr(PerfList** list)
     if (!gen)
     {
         printf("Memory problem.");
-        exit(1);
+        exit(4);
     }
     gen = "-BLU\0";
     PerfPush(&(*list), gen);
@@ -95,7 +95,7 @@ PerfList* PerfCr(PerfList** list)
     if (!gen)
     {
         printf("Memory problem.");
-        exit(4);
+        exit(5);
     }
     gen = "-JZ\0";
     PerfPush(&(*list), gen);
@@ -172,6 +172,7 @@ int main()
     list = PerfCr(&list);
     SearchID(&list, "-HHP");
     SearchName(&list, gen);
-    PerfClear(&list);
+    PerfClear(&list);	
+    free(gen);
     return 0;
 }
