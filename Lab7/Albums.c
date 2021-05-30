@@ -135,7 +135,7 @@ void AlbPush(struct AlbList** list, char* str, long* pos)
 	free(temp);
 }
 
-void Alb(AlbList** list, char* str)
+void Alb(struct AlbList** list, char* str)
 {
 	FILE *pf;
 	long pos = 0;
