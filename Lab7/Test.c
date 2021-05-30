@@ -93,6 +93,6 @@ void TestAll()
 
 int main()
 {
-    PerfomancesTest();
+    AlbumsTest();
     return 0;
 }
