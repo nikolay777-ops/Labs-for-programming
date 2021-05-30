@@ -1,6 +1,6 @@
 #include "main.h"
 
-typedef struct GenersNode
+struct GenersNode
 {
 	char* ID;
 	char** article;
@@ -8,25 +8,25 @@ typedef struct GenersNode
 	struct GenersNode* prev;
 };
 
-typedef struct GenersList
+struct GenersList
 {
-	GenersNode* head;
-	GenersNode* tail;
+	struct GenersNode* head;
+	struct GenersNode* tail;
 	int size;
 };
 
-bool GenExists(GenersList* list, char* str);
+bool GenExists(struct GenersList* list, char* str);
 
-GenersNode* GenSearch(GenersList* list, char* str);
+struct GenersNode* GenSearch(struct GenersList* list, char* str);
 
-GenersNode* GenCr(GenersNode* node);
+struct GenersNode* GenCr(struct GenersNode* node);
 
-void SetArticle(GenersNode* node, long* curPos);
+void SetArticle(struct GenersNode* node, long* curPos);
 
-void GenPush(GenersList** list, char* str);
+void GenPush(struct GenersList** list, char* str);
 
-GenersList* ListCr();
+struct GenersList* ListCr();
 
-void GenInfo(GenersList** geners, int num);
+void GenInfo(struct GenersList** geners, int num);
 
-void ClearAll(GenersList** list);
+void ClearAll(struct GenersList** list);
