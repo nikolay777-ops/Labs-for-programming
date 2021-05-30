@@ -1,6 +1,6 @@
 #include "main.h"
 
-typedef struct PerfNode
+struct PerfNode
 {
 	char* genID;
 	char* name;
@@ -9,26 +9,26 @@ typedef struct PerfNode
 	struct PerfNode* prev;
 };
 
-typedef struct PerfList
+struct PerfList
 {
-	PerfNode* head;
-	PerfNode* tail;
+	struct PerfNode* head;
+	struct PerfNode* tail;
 	int size;
 	long curPos;
 };
 
-PerfNode* NodeInit(PerfNode* node);
+struct PerfNode* NodeInit(struct PerfNode* node);
 
-void AddInfo(PerfNode* node, char* ID, long *curPos);
+void AddInfo(struct PerfNode* node, char* ID, long *curPos);
 
-void PerfPush(PerfList** list, char* ID);
+void PerfPush(struct PerfList** list, char* ID);
 
-PerfList* PerfCr(PerfList** list);
+struct PerfList* PerfCr(struct PerfList** list);
 
-void PerfInfo(PerfNode* node);
+void PerfInfo(struct PerfNode* node);
 
-void SearchID(PerfList** list, char* ID);
+void SearchID(struct PerfList** list, char* ID);
 
-void SearchName(PerfList** list, char* name);
+void SearchName(struct PerfList** list, char* name);
 
-void PerfClear(PerfList** list);
+void PerfClear(struct PerfList** list);
