@@ -168,7 +168,7 @@ void ClearAll(GenersList** list)
 	free(*list);
 	*list = NULL;
 }
-
+/*
 int main()
 {
    	GenersList* geners;
@@ -179,4 +179,4 @@ int main()
 	GenInfo(&geners, 4);
 	ClearAll(&geners);
 	return 0;
-}
+}*/
