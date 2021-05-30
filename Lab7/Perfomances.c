@@ -1,15 +1,15 @@
 #include "Perfomances.h"
 
-PerfNode* NodeInit(PerfNode* node)
+struct PerfNode* NodeInit(struct PerfNode* node)
 {
-    node = (PerfNode*)malloc(sizeof(PerfNode));
+    node = (struct PerfNode*)malloc(sizeof(struct PerfNode));
     node->name = (char*)malloc(sizeof(char) * 21);
     node->year = (char*)malloc(sizeof(char) * 4);
     node->next = NULL;
     return node;
 }
 
-void AddInfo(PerfNode* node, char* ID, long *curPos)
+void AddInfo(struct PerfNode* node, char* ID, long *curPos)
 {
     FILE *fp;
     char* temp;
@@ -30,11 +30,11 @@ void AddInfo(PerfNode* node, char* ID, long *curPos)
     fclose(fp);
 }
 
-void PerfPush(PerfList** list, char* ID)
+void PerfPush(struct PerfList** list, char* ID)
 {   
     if (!(*list))
     {
-        *list = (PerfList*)malloc(sizeof(PerfList));
+        *list = (struct PerfList*)malloc(sizeof(struct PerfList));
         ((*list)->head) = NodeInit((*list)->head);
         (*list)->curPos = 0;
         AddInfo((*list)->head, ID, &((*list)->curPos));
@@ -42,7 +42,7 @@ void PerfPush(PerfList** list, char* ID)
     }
     else
     {
-        PerfNode *temp, *buf;
+        struct PerfNode *temp, *buf;
         temp = (*list)->head;
         buf = NodeInit(buf);
         while (temp->next != NULL)
@@ -57,7 +57,7 @@ void PerfPush(PerfList** list, char* ID)
     }
 }
 
-PerfList* PerfCr(PerfList** list)
+struct PerfList* PerfCr(struct PerfList** list)
 {
     char* gen;
     gen = (char*)malloc(sizeof(char) * 7);
@@ -103,7 +103,7 @@ PerfList* PerfCr(PerfList** list)
     PerfPush(&(*list),gen);
 }
 
-void PerfInfo(PerfNode* node)
+void PerfInfo(struct PerfNode* node)
 {
     int i, j;
     for (i = 0, j = 0; node->genID[i] != '\0' ; i++)
@@ -123,9 +123,9 @@ void PerfInfo(PerfNode* node)
     printf("Years: %s", node->year);
 }
 
-void SearchID(PerfList** list, char* ID)
+void SearchID(struct PerfList** list, char* ID)
 {
-    PerfNode* temp = (*list)->head;
+    struct PerfNode* temp = (*list)->head;
     while (temp != NULL)
     {
         if (strcmp(temp->genID, ID) == 0)
@@ -136,9 +136,9 @@ void SearchID(PerfList** list, char* ID)
     }
 }
 
-void SearchName(PerfList** list, char* name)
+void SearchName(struct PerfList** list, char* name)
 {
-    PerfNode* temp = (*list)->head;
+    struct PerfNode* temp = (*list)->head;
     while(temp != NULL)
     {
         if (strncmp(temp->name, name, 3) == 0)
@@ -150,9 +150,9 @@ void SearchName(PerfList** list, char* name)
     }
 }
 
-void PerfClear(PerfList** list)
+void PerfClear(struct PerfList** list)
 {
-    PerfNode* node = (*list)->head;
+    struct PerfNode* node = (*list)->head;
     while (node != NULL)
     {
         free(node->genID); node->genID = NULL;
