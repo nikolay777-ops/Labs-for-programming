@@ -1,7 +1,4 @@
 #include "UI.h"
-#include "Genres.h"
-#include "Albums.h"
-#include "main.h"
 #include <assert.h>
 
 void UITest();
