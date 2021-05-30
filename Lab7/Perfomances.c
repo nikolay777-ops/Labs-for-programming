@@ -166,22 +166,13 @@ void PerfClear(PerfList** list)
 int main()
 {
     PerfList* list;
-	printf("A");
     char* gen;
-	printf("A");
     gen = (char*)malloc(sizeof(char) * 20);
-	printf("A");
     gen = "Kanye\0";
-	printf("A");
     list = PerfCr(&list);
-	printf("A");
     SearchID(&list, "-HHP");
-	printf("A");
     SearchName(&list, gen);
-	printf("A");
     PerfClear(&list);	
-	printf("A");
     free(gen);
-	printf("A");
     return 0;
 }
