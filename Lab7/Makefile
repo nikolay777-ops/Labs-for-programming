@@ -1,5 +1,5 @@
 Genres:
-	gcc Genres.h Genres.c main.h main.c -o test -D=TESTING
+	gcc Genres.h Genres.c main.h main.c -o gen -D=TESTING
 Perfomances:
 	gcc Perfomances.h Perfomances.c -o perf 
 Albums:
