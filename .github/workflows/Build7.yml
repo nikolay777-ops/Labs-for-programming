@@ -17,5 +17,5 @@ jobs:
     - name: Albums
       run: | 
             cd Lab7
-            make Albums
-            ./albumsTest
+            make thend
+            ./thEND
