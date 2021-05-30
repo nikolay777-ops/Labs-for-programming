@@ -10,14 +10,11 @@ jobs:
   build:
 
 
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
 
     steps:
     - uses: actions/checkout@v2
     - name: make
       run: |
             cd Lab7
-            make Genres
-    - run: |
-           cd Lab7
-           ./gener
+            make thend
