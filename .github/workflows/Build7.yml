@@ -14,8 +14,8 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - name: Test
+    - name: Albums
       run: | 
             cd Lab7
-            make Perfomances
-            ./perfoTest
+            make Albums
+            ./albumsTest
