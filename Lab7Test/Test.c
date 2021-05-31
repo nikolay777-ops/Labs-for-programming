@@ -1,5 +1,4 @@
 #include "All.h"
-#include "Test.h"
 #include <assert.h>
 #include <sys/stat.h>
 #include <sys/types.h>
@@ -96,6 +95,6 @@ void TestAll()
 
 int main()
 {
-	GenresTest();
+	PerfomancesTest();
 	return 0;
 }
