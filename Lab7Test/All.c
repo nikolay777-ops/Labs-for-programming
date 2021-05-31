@@ -759,29 +759,29 @@ void UITest()
     char* str = (char*)malloc(sizeof(char) * 21);
     assert(str != NULL);
     AllAlbums(&list);
-    //assert(list != NULL);
-    //assert(list->head != NULL);
-   // assert(list->tail != NULL);
-    //assert(strncmp(list->head->perfID, "Kan", 3) == 0);
-    //assert(strncmp(list->head->next->next->perfID, "Kil", 3) == 0);
-    //assert(strncmp(list->head->next->next->next->next->perfID, "Emi", 3) == 0);
-   // assert(strncmp(list->head->next->next->next->next->next->next->perfID, "Dav", 3) == 0);
+    assert(list != NULL);
+    assert(list->head != NULL);
+    assert(list->tail != NULL);
+    assert(strncmp(list->head->perfID, "Kan", 3) == 0);
+    assert(strncmp(list->head->next->next->perfID, "Kil", 3) == 0);
+    assert(strncmp(list->head->next->next->next->next->perfID, "Emi", 3) == 0);
+    assert(strncmp(list->head->next->next->next->next->next->next->perfID, "Dav", 3) == 0);
     usList = (struct UserList*)malloc(sizeof(struct UserList));
-   // assert(usList != NULL);
+    assert(usList != NULL);
     usList->head = (struct User*)malloc(sizeof(struct User));
-    //assert(usList->head != NULL); 
+    assert(usList->head != NULL); 
     usList->head->next = NULL;
     usList->head->prev = NULL;
     assert(usList->head != NULL);
     str = "Kanye West";
-    Start(&list, usList->head, 1, "");
-    Start(&list, usList->head, 2, "");
-    Start(&list, usList->head, 3, "");
-    Start(&list, usList->head, 4, str);
-    Report(&list, &usList);
-   // assert(usList->head->totalSum > 0);
-  //  ClearAlb(&list);
-   // assert(list == NULL);
+    //Start(&list, usList->head, 1, "");
+    //Start(&list, usList->head, 2, "");
+    //Start(&list, usList->head, 3, "");
+    //Start(&list, usList->head, 4, str);
+    //Report(&list, &usList);
+    assert(usList->head->totalSum > 0);
+    ClearAlb(&list);
+    assert(list == NULL);
 }
 
 void AlbumsTest()
