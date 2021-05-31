@@ -40,7 +40,7 @@ void FirstTest()
 
 int main()
 {
-    //PerfomancesTest();
+    PerfomancesTest();
     FirstTest();
     return 0;
 }
