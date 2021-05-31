@@ -15,10 +15,8 @@ jobs:
     steps:
     - name: Checkout code
       uses: actions/checkout@v2
-      
-    - name: Install Valgrind
+    - name: Testing
       run: |
-          sudo apt Valgrind
-    - name: Valgrind Test
-      run: make TestAll -C Lab7Test
+            make Test
+            ./end
     
