@@ -11,15 +11,14 @@ jobs:
 
 
     runs-on: windows-latest
-
-    steps:
+    steps:      
     - name: Checkout code
       uses: actions/checkout@v2
     - name: Testing
       run: |
             cd Lab7Test
             make Test1
-            ./test1
+            ./test1 
             
     - name: Codecov
       run: cd Lab7Test && export CODECOV_TOKEN="d15c1448-8d9f-459c-a36b-7c9d789c1f13" && bash <(curl -s https://codecov.io/bash)
