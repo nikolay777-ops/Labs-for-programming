@@ -3,7 +3,7 @@ name: Builder
 on:
   push:
     paths:
-     - 'Lab7/**'
+     - 'Lab7Test/**'
     
 
 jobs:
@@ -15,5 +15,5 @@ jobs:
     - name: Albums
       run: | 
             cd Lab7
-            make thend
-            ./thEND
+            make Test
+            ./end
