@@ -13,7 +13,7 @@ long FindPos(char* str)
 	FILE *fp;
 	char* temp = (char*)malloc(sizeof(char) * 36);
 	long pos = 0;
-	if (!(fp = fopen("E:\\Trash\\GG\\Albums.txt", "r")))
+	if (!(fp = fopen("Albums.txt", "r")))
 	{
 		printf("An error with opening Albums.txt");
 		exit(1);
@@ -37,7 +37,7 @@ void CompPush(struct CompList** list, long* pos)
 	FILE *pf;
 	char* temp;
 	struct CompNode* point = (*list)->head;
-	if (!(pf = fopen("E:\\Trash\\GG\\Albums.txt", "r")))
+	if (!(pf = fopen("Albums.txt", "r")))
 	{
 		printf("An error with opening Albums.txt");
 		exit(1);
@@ -76,7 +76,7 @@ void AlbPush(struct AlbList** list, char* str, long* pos)
 	struct AlbNode* temporary = NULL;
 	int i = 0;
 	srand(time(NULL));
-	if (!(fp = fopen("E:\\Trash\\GG\\Albums.txt", "r")))
+	if (!(fp = fopen("Albums.txt", "r")))
 	{
 		printf("An error with opening Albums.txt");
 		exit(1);
@@ -142,7 +142,7 @@ void Alb(struct AlbList** list, char* str)
 	long pos = 0;
 	char* temp = (char*)malloc(sizeof(char) * 37);
 	pos = FindPos(str);
-	if (!(pf = fopen("E:\\Trash\\GG\\Albums.txt", "r")))
+	if (!(pf = fopen("Albums.txt", "r")))
 	{
 		printf("An error with Albums.txt");
 		exit(1);
@@ -315,7 +315,7 @@ void SetArticle(struct GenersNode* node, long* curPos)
 {
 	FILE *pp;
 	int i;
-	if (!(pp = fopen("E:\\Trash\\GG\\Article.txt", "r")))
+	if (!(pp = fopen("Article.txt", "r")))
 	{
 		printf("Problems with Article.txt");
 		exit(1);
@@ -372,7 +372,7 @@ struct GenersList* ListCr()
 	str = NULL;
 	geners = NULL;
 	i = 0;
-	if (!(fp = fopen("E:\\Trash\\GG\\Genres.txt", "r")))
+	if (!(fp = fopen("Genres.txt", "r")))
 	{
 		printf("Error with opening Genres.txt\n");
 		exit(1);
@@ -459,7 +459,7 @@ void AddInfo(struct PerfNode* node, char* ID, long *curPos)
     FILE *fp;
     char* temp;
     node->genID = ID;
-	if (!(fp = fopen("E:\\Trash\\GG\\Perf.txt", "r")))
+	if (!(fp = fopen("Perf.txt", "r")))
     {
         printf("Error with Perf.txt");
         exit(1);
@@ -601,8 +601,8 @@ void PerfClear(struct PerfList** list)
     struct PerfNode* node = (*list)->head;
 	while (node->next != NULL)
     {
-		free(node->genID); //node->genID = NULL;
-		free(node->name); //node->name = NULL;
+	free(node->genID); //node->genID = NULL;
+	free(node->name); //node->name = NULL;
         free(node->year);  //node->year = NULL;
         node = node->next;
     }
@@ -671,7 +671,7 @@ void PerfomancesAction(int i, char* str)
     {
         case 1:
         {
-			SearchID(&perf, "-HHP");
+	    SearchID(&perf, "-HHP");
             SearchID(&perf, "-ELEC");
             SearchID(&perf, "-BLU");
             SearchID(&perf, "-JZ");
@@ -720,7 +720,7 @@ void Report(struct AlbList** list, struct UserList** usList)
         totalCash += usNode->totalSum;
         usNode = usNode->next;
     }
-    if (!(fp = fopen("E:\\Trash\\GG\\Report.txt", "w")))
+    if (!(fp = fopen("Report.txt", "w")))
     {
         printf("An error with Report.txt");
         exit(1);
@@ -735,20 +735,20 @@ void Report(struct AlbList** list, struct UserList** usList)
             fputc('\n',fp);
             fputs("price: ",fp);
             fputs(IntToStr(node->price), fp);
-			fputc('\n',fp);
+	    fputc('\n',fp);
             fputs("Copies sold: ", fp);
-			fputs(IntToStr(node->bought), fp);
-			fputc('\n', fp);
-			node = node->next;
-		}
-		fputs("Total copies: ", fp);
+       	    fputs(IntToStr(node->bought), fp);
+	    fputc('\n', fp);
+            node = node->next;
+	}
+	fputs("Total copies: ", fp);
 		fputc('\n', fp);
 		fputs(IntToStr(totalAlbums), fp);
 		fputc('\n', fp);
 		fputs("Total profit: ", fp);
 		fputc('\n', fp);
 		fputs(IntToStr(totalCash), fp);
-	}
+     }
     fclose(fp);
 }
 
@@ -757,10 +757,10 @@ void UITest()
     struct AlbList* list = NULL;
     struct UserList* usList = NULL;
     char* str = (char*)malloc(sizeof(char) * 21);
-	assert(str != NULL);
-	AllAlbums(&list);
+    assert(str != NULL);
+    AllAlbums(&list);
     assert(list != NULL);
-	assert(list->head != NULL);
+    assert(list->head != NULL);
     assert(list->tail != NULL);
     assert(strncmp(list->head->perfID, "Kan", 3) == 0);
     assert(strncmp(list->head->next->next->perfID, "Kil", 3) == 0);
@@ -768,15 +768,15 @@ void UITest()
     assert(strncmp(list->head->next->next->next->next->next->next->perfID, "Dav", 3) == 0);
     usList = (struct UserList*)malloc(sizeof(struct UserList));
     assert(usList != NULL);
-	usList->head = (struct User*)malloc(sizeof(struct User));
-    assert(usList->head != NULL);
-	usList->head->next = NULL;
+    usList->head = (struct User*)malloc(sizeof(struct User));
+    assert(usList->head != NULL); 
+    usList->head->next = NULL;
     usList->head->prev = NULL;
     assert(usList->head != NULL);
     str = "Kanye West";
     Start(&list, usList->head, 1, "");
     Start(&list, usList->head, 2, "");
- 	Start(&list, usList->head, 3, "");
+    Start(&list, usList->head, 3, "");
     Start(&list, usList->head, 4, str);
     Report(&list, &usList);
     assert(usList->head->totalSum > 0);
