@@ -17,6 +17,7 @@ jobs:
       uses: actions/checkout@v2
     - name: Testing
       run: |
+            cd Lab7Test
             make Test
             ./end
     
