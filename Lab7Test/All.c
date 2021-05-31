@@ -1,4 +1,5 @@
 #include "All.h"
+#include <assert.h>
 
 void AlbInit(struct AlbList** list)
 {
@@ -839,4 +840,10 @@ void TestAll()
 	PerfomancesTest();
 	GenresTest();
 	printf("Tests are done!");
+}
+
+int main()
+{
+	TestAll();
+	return 0;
 }
