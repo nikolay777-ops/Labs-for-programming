@@ -40,8 +40,8 @@ void FirstTest()
 
 int main()
 {
-    FirstTest();
     PerfomancesTest();
+    FirstTest();
     return 0;
 }
 
