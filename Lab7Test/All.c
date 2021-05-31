@@ -12,7 +12,7 @@ long FindPos(char* str)
 	FILE *fp;
 	char* temp = (char*)malloc(sizeof(char) * 36);
 	long pos = 0;
-	if (!(fp = fopen("E:\\Trash\\GG\\Albums.txt", "r")))
+	if (!(fp = fopen("Albums.txt", "r")))
 	{
 		printf("An error with opening Albums.txt");
 		exit(1);
@@ -36,7 +36,7 @@ void CompPush(struct CompList** list, long* pos)
 	FILE *pf;
 	char* temp;
 	struct CompNode* point = (*list)->head;
-	if (!(pf = fopen("E:\\Trash\\GG\\Albums.txt", "r")))
+	if (!(pf = fopen("Albums.txt", "r")))
 	{
 		printf("An error with opening Albums.txt");
 		exit(1);
@@ -75,7 +75,7 @@ void AlbPush(struct AlbList** list, char* str, long* pos)
 	struct AlbNode* temporary = NULL;
 	int i = 0;
 	srand(time(NULL));
-	if (!(fp = fopen("E:\\Trash\\GG\\Albums.txt", "r")))
+	if (!(fp = fopen("Albums.txt", "r")))
 	{
 		printf("An error with opening Albums.txt");
 		exit(1);
@@ -141,7 +141,7 @@ void Alb(struct AlbList** list, char* str)
 	long pos = 0;
 	char* temp = (char*)malloc(sizeof(char) * 37);
 	pos = FindPos(str);
-	if (!(pf = fopen("E:\\Trash\\GG\\Albums.txt", "r")))
+	if (!(pf = fopen("Albums.txt", "r")))
 	{
 		printf("An error with Albums.txt");
 		exit(1);
@@ -314,7 +314,7 @@ void SetArticle(struct GenersNode* node, long* curPos)
 {
 	FILE *pp;
 	int i;
-	if (!(pp = fopen("E:\\Trash\\GG\\Article.txt", "r")))
+	if (!(pp = fopen("Article.txt", "r")))
 	{
 		printf("Problems with Article.txt");
 		exit(1);
@@ -371,7 +371,7 @@ struct GenersList* ListCr()
 	str = NULL;
 	geners = NULL;
 	i = 0;
-	if (!(fp = fopen("E:\\Trash\\GG\\Genres.txt", "r")))
+	if (!(fp = fopen("Genres.txt", "r")))
 	{
 		printf("Error with opening Genres.txt\n");
 		exit(1);
@@ -458,7 +458,7 @@ void AddInfo(struct PerfNode* node, char* ID, long *curPos)
     FILE *fp;
     char* temp;
     node->genID = ID;
-	if (!(fp = fopen("E:\\Trash\\GG\\Perf.txt", "r")))
+	if (!(fp = fopen("Perf.txt", "r")))
     {
         printf("Error with Perf.txt");
         exit(1);
@@ -719,7 +719,7 @@ void Report(struct AlbList** list, struct UserList** usList)
         totalCash += usNode->totalSum;
         usNode = usNode->next;
     }
-    if (!(fp = fopen("E:\\Trash\\GG\\Report.txt", "w")))
+    if (!(fp = fopen("Report.txt", "w")))
     {
         printf("An error with Report.txt");
         exit(1);
