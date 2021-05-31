@@ -20,5 +20,6 @@ jobs:
       run: |
             cd Lab7Test
             make Test1
-            ./test1.exe 
-            codecov -f "test1.exe" -t CODECOV_TOKEN="d15c1448-8d9f-459c-a36b-7c9d789c1f13"  
+            ./test1 
+    - name: Codecov
+      run:  curl -s https://codecov.io/bash | bash -s - -t token
