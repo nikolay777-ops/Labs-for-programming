@@ -1,3 +1,4 @@
+#include "All.h"
 #include "Test.h"
 #include <assert.h>
 #include <sys/stat.h>
