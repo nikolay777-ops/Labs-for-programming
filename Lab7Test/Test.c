@@ -95,6 +95,16 @@ void TestAll()
 
 int main()
 {
-	PerfomancesTest();
+	struct AlbList* list = NULL;
+	list = (struct AlbList*)malloc(sizeof(struct AlbList));
+	list->head = NULL;
+	list->tail = NULL;
+    	char* str = (char*)malloc(sizeof(char) * 20);
+	strcpy(str, "Kanye West");
+	Alb(&list, str);
+	ClearAlb(&list);
+	free(str);
+	printf("The end!");
+	return 0;
 	return 0;
 }
