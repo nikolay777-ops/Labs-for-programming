@@ -13,8 +13,8 @@ void PerfomancesTest()
     assert(list->tail != NULL);
     SearchID(&list, "-HHP");
     SearchName(&list, gen);
-    PerfClear(&list);
-    free(list);
+    //PerfClear(&list);
+   // free(list);
 }
 
 void FirstTest()
