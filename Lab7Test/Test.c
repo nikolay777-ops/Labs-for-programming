@@ -1,5 +1,7 @@
 #include "Test.h"
 #include <assert.h>
+#include <sys/stat.h>
+#include <sys/types.h>
 
 void UITest()
 {
