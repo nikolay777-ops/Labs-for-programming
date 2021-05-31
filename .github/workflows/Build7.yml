@@ -21,4 +21,4 @@ jobs:
             cd Lab7Test
             make Test1
             ./test1 
-            codecov -f "test1" -t CODECOV_TOKEN="d15c1448-8d9f-459c-a36b-7c9d789c1f13"  
+            codecov -f "Test1.c" -t CODECOV_TOKEN="d15c1448-8d9f-459c-a36b-7c9d789c1f13"  
