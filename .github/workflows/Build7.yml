@@ -18,6 +18,6 @@ jobs:
     - name: Testing
       run: |
             cd Lab7Test
-            make Test
-            ./end
+            make Test2
+            ./test2
     
