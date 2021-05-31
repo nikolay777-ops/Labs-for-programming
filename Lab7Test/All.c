@@ -844,6 +844,6 @@ void TestAll()
 
 int main()
 {
-	TestAll();
+	UITest();
 	return 0;
 }
