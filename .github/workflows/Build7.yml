@@ -10,14 +10,15 @@ jobs:
   build:
 
 
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
 
     steps:
     - uses: actions/checkout@v2
-    - name: make
+    - name: Install Valgrind
+      run: sudo apt Valgrind
+    - name: Valgrind Test
       run: |
             cd Lab7Test
-            make Test
-            ./end
+            make TestAll
     - name: CodeCov
       run: cd Lab7Test && export CODECOV_TOKEN="d15c1448-8d9f-459c-a36b-7c9d789c1f13" && bash <(curl -s https://codecov.io/bash)
