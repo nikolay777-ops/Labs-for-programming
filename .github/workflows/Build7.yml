@@ -22,4 +22,4 @@ jobs:
             ./test1
             
     - name: Codecov
-      run: cd Lab7Test && export CODECOV_TOKEN="d15c1448-8d9f-459c-a36b-7c9d789c1f13" && bash <(curl -s https://codecov.io/bash)
+      run: cd Lab7Test && export CODECOV_TOKEN="d15c1448-8d9f-459c-a36b-7c9d789c1f13" && bash |(curl -s https://codecov.io/bash)
