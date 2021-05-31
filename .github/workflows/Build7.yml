@@ -18,4 +18,4 @@ jobs:
       run: |
             cd Lab7Test
             make Test
-            ./test
+            ./end
