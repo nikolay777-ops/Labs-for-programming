@@ -21,22 +21,6 @@ struct GenersList
 	int size;
 };
 
-bool GenExists(struct GenersList* list, char* str);
-
-struct GenersNode* GenSearch(struct GenersList* list, char* str);
-
-struct GenersNode* GenCr(struct GenersNode* node);
-
-void SetArticle(struct GenersNode* node, long* curPos);
-
-void GenPush(struct GenersList** list, char* str);
-
-struct GenersList* ListCr();
-
-void GenInfo(struct GenersList** geners, int num);
-
-void ClearAll(struct GenersList** list);
-
 struct CompNode
 {
 	char* name;
@@ -69,6 +53,53 @@ struct AlbList
 	int size;
 };
 
+struct PerfNode
+{
+	char* genID;
+	char* name;
+	char* year;
+	struct PerfNode* next;
+	struct PerfNode* prev;
+};
+
+struct PerfList
+{
+	struct PerfNode* head;
+	struct PerfNode* tail;
+	int size;
+	long curPos;
+};
+
+struct User
+{
+    struct User* next;
+    struct User* prev;
+    int totalSum;
+};
+
+struct UserList
+{
+    struct User* head;
+    struct User* tail;
+    int size;
+};
+
+bool GenExists(struct GenersList* list, char* str);
+
+struct GenersNode* GenSearch(struct GenersList* list, char* str);
+
+struct GenersNode* GenCr(struct GenersNode* node);
+
+void SetArticle(struct GenersNode* node, long* curPos);
+
+void GenPush(struct GenersList** list, char* str);
+
+struct GenersList* ListCr();
+
+void GenInfo(struct GenersList** geners, int num);
+
+void ClearAll(struct GenersList** list);
+
 void AlbInit(struct AlbList** list);
 
 long FindPos(char* str);
@@ -95,23 +126,6 @@ void AllAlbums(struct AlbList** albums);
 
 char* IntToStr(int num);
 
-struct PerfNode
-{
-	char* genID;
-	char* name;
-	char* year;
-	struct PerfNode* next;
-	struct PerfNode* prev;
-};
-
-struct PerfList
-{
-	struct PerfNode* head;
-	struct PerfNode* tail;
-	int size;
-	long curPos;
-};
-
 struct PerfNode* NodeInit(struct PerfNode* node);
 
 void AddInfo(struct PerfNode* node, char* ID, long *curPos);
@@ -128,20 +142,6 @@ void SearchName(struct PerfList** list, char* name);
 
 void PerfClear(struct PerfList** list);
 
-struct User
-{
-    struct User* next;
-    struct User* prev;
-    int totalSum;
-};
-
-struct UserList
-{
-    struct User* head;
-    struct User* tail;
-    int size;
-};
-
 void Start(struct AlbList** list, struct User* user, int i, char* str);
 
 void ShowGenres();
@@ -153,5 +153,3 @@ void PerfomancesAction(int i, char* str);
 void AlbumsAction(struct AlbList** list, struct User* user, char* str, int i);
 
 void Report(struct AlbList** list, struct UserList** usList);
-
-
