@@ -1,2 +1,2 @@
 Test:
-     gcc All.c All.h -o end
+	gcc All.h All.c -o end
