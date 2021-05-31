@@ -1,0 +1,21 @@
+name: Builder
+
+on:
+  push:
+    paths:
+     - 'Lab7Test/**'
+    
+
+jobs:
+  build:
+
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: make
+      run: |
+            cd Lab7Test
+            make Test
+            ./end
