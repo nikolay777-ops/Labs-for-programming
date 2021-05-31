@@ -3,3 +3,4 @@ Test: Test.c All.h All.c
 Valgrind:
 	valgrind ./end
 TestAll: Test Valgrind
+
