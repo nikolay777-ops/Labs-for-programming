@@ -38,10 +38,26 @@ void FirstTest()
     //assert(strncmp(list->head->next->next->next->next->next->next->perfID, "Dav", 3) == 0);
 }
 
+void GenresTest()
+{
+	struct GenersList* geners = NULL;
+	assert(geners == NULL);
+	geners = ListCr();
+	assert(geners->head != NULL);
+	assert(geners->tail != NULL);
+	GenInfo(&geners, 1);
+	GenInfo(&geners, 2);
+	GenInfo(&geners, 3);
+	GenInfo(&geners, 4);
+	ClearAll(&geners);
+	assert(geners == NULL);
+}
+
 int main()
 {
     PerfomancesTest();
     FirstTest();
+    GenresTest();
     return 0;
 }
 
