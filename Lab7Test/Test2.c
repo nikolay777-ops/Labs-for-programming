@@ -8,14 +8,17 @@ void FirstTest()
     list->head = list->tail = NULL;
     char* str = (char*)malloc(sizeof(char) * 15);
     assert(str);
-    str = "Kanye West";
+	str = "Kanye West";
     Alb(&list, str);
-    assert(list != NULL);
-    assert(list->head != NULL);
+    str = (char*)malloc(sizeof(char) * 15);
+    str = "Killstation";
+    Alb(&list, str);
+	assert(list != NULL);
+	assert(list->head != NULL);
     assert(list->tail != NULL);
     assert(strncmp(list->head->perfID, "Kan", 3) == 0);
-    //assert(strncmp(list->head->next->next->perfID, "Kil", 3) == 0);
-   //assert(strncmp(list->head->next->next->next->next->perfID, "Emi", 3) == 0);
+    assert(strncmp(list->head->next->next->perfID, "Kil", 3) == 0);
+    //assert(strncmp(list->head->next->next->next->next->perfID, "Emi", 3) == 0);
     //assert(strncmp(list->head->next->next->next->next->next->next->perfID, "Dav", 3) == 0);
 }
 
