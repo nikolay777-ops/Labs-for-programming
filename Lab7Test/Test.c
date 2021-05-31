@@ -1,4 +1,4 @@
-#include "Test.h"
+#include "All.h"
 #include <assert.h>
 
 void UITest()
