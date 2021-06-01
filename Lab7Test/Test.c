@@ -36,16 +36,16 @@ void AlbumsTest()
 
 void PerfomancesTest()
 {
-    struct PerfList* list = NULL;
-    char* gen;
-    gen = (char*)malloc(sizeof(char) * 20);
-    gen = "Kanye\0";
-    PerfCr(&list);
-    assert(list != NULL);
-    assert(list->head != NULL);
-    assert(list->tail != NULL);
-    SearchID(&list, "-HHP");
-    SearchName(&list, gen);
+	struct PerfList* list = NULL;
+        char* gen;
+        gen = (char*)malloc(sizeof(char) * 20);
+        gen = "Kanye\0";
+        PerfCr(&list);
+        assert(list != NULL);
+        assert(list->head != NULL);
+        assert(list->tail != NULL);
+        SearchID(&list, "-HHP");
+        SearchName(&list, gen);
 }
 
 void GenresTest()
@@ -63,28 +63,29 @@ void GenresTest()
 
 void UITest()
 {
-    struct AlbList* list = NULL;
-    struct UserList* usList = NULL;
-    char* str = (char*)malloc(sizeof(char) * 21);
-    assert(str != NULL);
-    AllAlbums(&list);
-    usList = (struct UserList*)malloc(sizeof(struct UserList));
-    assert(usList != NULL);
-    usList->head = (struct User*)malloc(sizeof(struct User));
-    assert(usList->head != NULL);
-    usList->head->next = NULL;
-    usList->head->prev = NULL;
-    str = "Kanye West";
-    Start(&list, usList->head, 1, "");
-    Start(&list, usList->head, 2, "");
-    Start(&list, usList->head, 3, "");
-    Start(&list, usList->head, 4, str);
-    Report(&list, &usList);
-    assert(usList->head->totalSum > 0);
+    	struct AlbList* list = NULL;
+    	struct UserList* usList = NULL;
+    	char* str = (char*)malloc(sizeof(char) * 21);
+    	assert(str != NULL);
+    	AllAlbums(&list);
+    	usList = (struct UserList*)malloc(sizeof(struct UserList));
+    	assert(usList != NULL);
+    	usList->head = (struct User*)malloc(sizeof(struct User));
+    	assert(usList->head != NULL);
+    	usList->head->next = NULL;
+    	usList->head->prev = NULL;
+    	str = "Kanye West";
+    	Start(&list, usList->head, 1, "");
+    	Start(&list, usList->head, 2, "");
+    	Start(&list, usList->head, 3, "");
+    	Start(&list, usList->head, 4, str);
+    	Report(&list, &usList);
+    	assert(usList->head->totalSum > 0);
 }
 
 void TestAll()
 {
+	FirstTest();
 	UITest();
 	PerfomancesTest();
 	GenresTest();
