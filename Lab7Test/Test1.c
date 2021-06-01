@@ -34,8 +34,7 @@ void FirstTest()
     assert(list->tail != NULL);
     assert(strncmp(list->head->perfID, "Kan", 3) == 0);
     assert(strncmp(list->head->next->next->perfID, "Kil", 3) == 0);
-    //assert(strncmp(list->head->next->next->next->next->perfID, "Emi", 3) == 0);
-    //assert(strncmp(list->head->next->next->next->next->next->next->perfID, "Dav", 3) == 0);
+ 
 }
 
 void GenresTest()
@@ -73,15 +72,13 @@ void UITest()
     Start(&list, usList->head, 4, str);
     Report(&list, &usList);
     assert(usList->head->totalSum > 0);
-   	//ClearAlb(&list);
-	//free(list);
 }
 
 int main()
 {
-   // UITest();
-    FirstTest();
-    PerfomancesTest();
-    GenresTest();
+    UITest();
+    //FirstTest();
+    //PerfomancesTest();
+    //GenresTest();
     return 0;
 }
