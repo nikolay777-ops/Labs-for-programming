@@ -606,6 +606,11 @@ void AlbumsAction(struct AlbList** list, struct User** user, char* str, int i)
         struct AlbList* search = NULL;
 	printf("Please write the name of performer.");
 	search = SearchByPerformer(list, str);
+	if(!search)
+	{
+		printf("search error");
+		exit(1);
+	}
 	AlbInfo(search->head);
 	printf("\nDo you want to buy such album? (Yes/1, No/0)\n");
 	if (i == 1)
