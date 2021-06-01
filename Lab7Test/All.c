@@ -627,7 +627,7 @@ void AlbumsAction(struct AlbList** list, struct User** user, char* str, int i)
       //  	search->head->next->bought++;
         //	(*user)->totalSum += search->head->next->price;
     //	}
-	//free(str);
+	free(str);
 }
 
 void Report(struct AlbList** list, struct UserList** usList)
