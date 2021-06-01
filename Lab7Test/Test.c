@@ -18,8 +18,8 @@ void UITest()
     usList->head->prev = NULL;
     str = "Kanye West";
     Start(&list, usList->head, 1, "");
-    Start(&list, usList->head, 2, "");
-    Start(&list, usList->head, 3, "");
+    //Start(&list, usList->head, 2, "");
+    //Start(&list, usList->head, 3, "");
    // Start(&list, usList->head, 4, str);
     //Report(&list, &usList);
     assert(usList->head->totalSum > 0);
@@ -85,9 +85,9 @@ void GenresTest()
 
 void TestAll()
 {
+	UITest();
 	PerfomancesTest();
 	GenresTest();
-    	UITest();
 	AlbumsTest();
 	printf("Tests are done!");
 }
