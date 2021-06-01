@@ -79,7 +79,7 @@ void UITest()
 
 int main()
 {
-    UITest();
+   // UITest();
     PerfomancesTest();
     FirstTest();
     GenresTest();
