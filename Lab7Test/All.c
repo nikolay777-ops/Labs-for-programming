@@ -598,7 +598,6 @@ void PerfomancesAction(int i, char* str)
 
 void AlbumsAction(struct AlbList** list, struct User** user, char* str, int i)
 {
-     struct AlbNode* node = (*list)->head;
      struct AlbList* search = NULL;
      printf("Please write the name of performer.");
      search = SearchByPerformer(list, str);
