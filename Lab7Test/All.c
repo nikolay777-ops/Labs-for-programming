@@ -62,7 +62,7 @@ void CompPush(struct CompList** list, long *pos)
 			point->next->next = NULL;
 			point->next->prev = point;
 			point = point->next;
-            (*list)->size++;
+			(*list)->size++;
 		}
 		(*list)->tail = point;
 		*pos = ftell(pf);
@@ -251,9 +251,7 @@ struct GenersNode* GenSearch(struct GenersList* list, char* str)
 	for (temp = list->head; temp != list->tail; temp = temp->next)
 	{
 		if (temp->ID == str)
-		{
 			return temp;
-		}
 	}
 	return NULL;
 }
@@ -265,9 +263,7 @@ struct GenersNode* GenCr(struct GenersNode* node)
 	node->next = NULL;
 	node->article = (char**)malloc(sizeof(char*) * 4);
 	for (i = 0; i < 4; i++)
-	{
 		node->article[i] = (char*)malloc(sizeof(char) * 72);
-	}
 	return node;
 }
 
@@ -285,8 +281,8 @@ void SetArticle(struct GenersNode* node, long* curP)
 		fseek(pp, *curP, 0);
 		for (i = 0; i < 4; i++)
 		{
-		fgets(node->article[i], 71, pp);
-		fflush(stdin);
+			fgets(node->article[i], 71, pp);
+			fflush(stdin);
 		}
 		*curP = ftell(pp);
 		fclose(pp);
@@ -377,12 +373,12 @@ void GenInfo(struct GenersList** geners, int num)
 void NodeInit(struct PerfNode** node)
 {
     *node = (struct PerfNode*)malloc(sizeof(struct PerfNode));
-	(*node)->name = (char*)malloc(sizeof(char) * 21);
-	if (StrSize((*node)->name) != 0)
-		(*node)->name = (char*)malloc(sizeof(char) * 21);
+    (*node)->name = (char*)malloc(sizeof(char) * 21);
+    if (StrSize((*node)->name) != 0)
+    	(*node)->name = (char*)malloc(sizeof(char) * 21);
+    (*node)->year = (char*)malloc(sizeof(char) * 4);
+    if (StrSize((*node)->year) != 0)
 	(*node)->year = (char*)malloc(sizeof(char) * 4);
-	if (StrSize((*node)->year) != 0)
-		(*node)->year = (char*)malloc(sizeof(char) * 4);
     (*node)->next = NULL;
 }
 
@@ -390,7 +386,7 @@ void AddInfo(struct PerfNode* node, char* ID, long *curPos)
 {
     FILE *fp;
     node->genID = ID;
-	if (!(fp = fopen("Perf.txt", "r")))
+    if (!(fp = fopen("Perf.txt", "r")))
     {
         printf("Error with Perf.txt");
         exit(1);
@@ -483,18 +479,18 @@ void PerfInfo(struct PerfNode* node)
 {
     int i, j;
     for (i = 0, j = 0; node->genID[i] != '\0' ; i++)
-	{
-		if (node->genID[i] == '\n')
-			continue;
-		j += node->genID[i];
-	}
-	switch(j)
-	{
-		case 269: printf("%s\n", "Hip hop");break;
-		case 326: printf("%s\n", "Electronic");break;
-		case 272: printf("%s\n", "Blues");break;
-		case 209: printf("%s\n", "Jazz");break;
-	}
+    {
+	if (node->genID[i] == '\n')
+		continue;
+	j += node->genID[i];
+    }
+    switch(j)
+    {
+	case 269: printf("%s\n", "Hip hop");break;
+	case 326: printf("%s\n", "Electronic");break;
+	case 272: printf("%s\n", "Blues");break;
+	case 209: printf("%s\n", "Jazz");break;
+    }
     printf("Name: %s", node->name);
     printf("Years: %s", node->year);
 }
@@ -580,8 +576,8 @@ void GenresInfo()
 void PerfomancesAction(int i, char* str)
 {
     struct PerfList* perf;
-	PerfCr(&perf);
-	printf("1.Show All\n");
+    PerfCr(&perf);
+    printf("1.Show All\n");
     printf("2.Show by name\n");
     switch (i)
     {
@@ -598,30 +594,28 @@ void PerfomancesAction(int i, char* str)
         }break;
         default: printf("You input incorrect number");break;
     }
-    //free(str);
 }
 
 void AlbumsAction(struct AlbList** list, struct User** user, char* str, int i)
 {
-        struct AlbNode* node = (*list)->head;
-	struct AlbList* search = NULL;
-	printf("Please write the name of performer.");
-	search = SearchByPerformer(list, str);
-	AlbInfo(search->head);
-	printf("\nDo you want to buy such album? (Yes/1, No/0)\n");
-	if (i == 1)
-	{
-		search->head->bought++;
-		(*user)->totalSum += search->head->price;
+     struct AlbNode* node = (*list)->head;
+     struct AlbList* search = NULL;
+     printf("Please write the name of performer.");
+     search = SearchByPerformer(list, str);
+     AlbInfo(search->head);
+     printf("\nDo you want to buy such album? (Yes/1, No/0)\n");
+     if (i == 1)
+     {
+	search->head->bought++;
+	(*user)->totalSum += search->head->price;
+     }
+     AlbInfo(search->head->next);
+     printf("\nDo you want to buy such album? (Yes/1, No/0)\n");
+     if (i == 1)
+     {
+	search->head->next->bought++;
+	(*user)->totalSum += search->head->next->price;
 	}
-	AlbInfo(search->head->next);
-	printf("\nDo you want to buy such album? (Yes/1, No/0)\n");
-	if (i == 1)
-    	{
-        	search->head->next->bought++;
-        	(*user)->totalSum += search->head->next->price;
-    	}
-	//free(str);
 }
 
 void Report(struct AlbList** list, struct UserList** usList)
