@@ -17,6 +17,7 @@ jobs:
     - name: Testing
       run: |
             cd Lab7Test
-            make TestAll -C Lab7Test/
+            make Test
+            ./end 
     - name: Codecovfirst
       run:  curl -s https://codecov.io/bash | bash -s - -t token
