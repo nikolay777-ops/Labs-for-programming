@@ -75,10 +75,11 @@ void UITest()
     usList->head->next = NULL;
     usList->head->prev = NULL;
     str = "Kanye West";
-    Start(&list, usList->head, 1, "");
-    Start(&list, usList->head, 2, "");
+    AlbumsAction(&list, &((*usList)->head), str, 1);
+	//Start(&list, usList->head, 1, "");
+    //Start(&list, usList->head, 2, "");
     //Start(&list, usList->head, 3, "");
-    Start(&list, usList->head, 4, str);
+    //Start(&list, usList->head, 4, str);
     //Report(&list, &usList);
     //assert(usList->head->totalSum > 0);
 }
