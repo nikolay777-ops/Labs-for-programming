@@ -79,9 +79,9 @@ void UITest()
 
 int main()
 {
+    UITest();
     PerfomancesTest();
     FirstTest();
     GenresTest();
-    UITest();
     return 0;
 }
