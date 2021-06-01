@@ -3,21 +3,6 @@
 #include <sys/stat.h>
 #include <sys/types.h>
 
-void FirstTest()
-{
-	struct AlbList* list = NULL;
-   	char* str = (char*)malloc(sizeof(char) * 20);
-	str = "Kanye West";
-	Alb(&list, str);
-	assert(list != NULL);
-	assert(list->head != NULL);
-	assert(list->tail != NULL);
-	assert(strncmp(list->head->perfID, "Kan", 3) == 0);
-	assert(strncmp(list->head->next->next->perfID, "Kil", 3) == 0);
-	assert(strncmp(list->head->next->next->next->next->perfID, "Emi", 3) == 0);
-	assert(strncmp(list->head->next->next->next->next->next->next->perfID, "Dav", 3) == 0);
-}
-
 void AlbumsTest()
 {
 	struct AlbList* albs = NULL;
@@ -26,6 +11,13 @@ void AlbumsTest()
 	AlbInit(&search);
 	AlbInit(&albs);
 	AllAlbums(&albs);
+	assert(list != NULL);
+	assert(list->head != NULL);
+	assert(list->tail != NULL);
+	assert(strncmp(list->head->perfID, "Kan", 3) == 0);
+	assert(strncmp(list->head->next->next->perfID, "Kil", 3) == 0);
+	assert(strncmp(list->head->next->next->next->next->perfID, "Emi", 3) == 0);
+	assert(strncmp(list->head->next->next->next->next->next->next->perfID, "Dav", 3) == 0);
 	nodeSearch = SearchByAlbum(&albs, "Kamikaze");
 	assert(nodeSearch != NULL);
 	assert(strncmp(nodeSearch->name, "Kamikaze", 3) == 0);
@@ -85,7 +77,6 @@ void UITest()
 
 void TestAll()
 {
-	FirstTest();
 	UITest();
 	PerfomancesTest();
 	GenresTest();
