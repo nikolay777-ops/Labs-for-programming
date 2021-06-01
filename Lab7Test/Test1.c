@@ -80,8 +80,8 @@ void UITest()
 int main()
 {
    // UITest();
-    PerfomancesTest();
     FirstTest();
+    PerfomancesTest();
     GenresTest();
     return 0;
 }
