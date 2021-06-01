@@ -547,7 +547,7 @@ void Start(struct AlbList** list, struct User* user, int i, char* str)
             PerfomancesAction(2, "Kanye West");
             PerfomancesAction(2, "Eminem");
         }break;
-        case 4: AlbumsAction(list, user, str, 1);break;
+        case 4: AlbumsAction(list, &user, str, 1);break;
         default: printf("Incorrect input.");break;
     }
 }
