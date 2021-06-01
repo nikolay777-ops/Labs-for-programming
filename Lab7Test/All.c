@@ -575,7 +575,6 @@ void GenresInfo()
 	GenInfo(&geners, 2);
 	GenInfo(&geners, 3);
 	GenInfo(&geners, 4);
-	ClearAll(&geners);
 }
 
 void PerfomancesAction(int i, char* str)
