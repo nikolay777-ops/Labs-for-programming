@@ -129,7 +129,6 @@ void AlbPush(struct AlbList** list, char* str, long *pos)
 		}
 	}
 	fclose(fp);
-	//free(temp);
 }
 
 void Alb(struct AlbList** list, char* str)
@@ -185,30 +184,6 @@ struct AlbNode* SearchByAlbum(struct AlbList** list, char* str)
 		temp = temp->next;
 	}
 	return temp;
-}
-
-void ClearCompose(struct CompList** list)
-{
-   	struct CompNode* temp = (*list)->head;
-	if (!(*list)) return;
-	while(temp != NULL)
-	{
-		free(temp->name); temp->name = NULL;
-		temp = temp->next;
-	}
-	free(*list); *list = NULL;
-}
-
-void ClearAlb(struct AlbList** list)
-{
-	if (!(*list)) return;
-	while ((*list)->head != NULL)
-	{
-		ClearCompose(&((*list)->head->compos));
-		free((*list)->head->name); (*list)->head->name = NULL;
-		free((*list)->head->perfID); (*list)->head->perfID = NULL;
-		(*list)->head = (*list)->head->next;
-	}
 }
 
 void AlbInfo(struct AlbNode* node)
@@ -268,17 +243,6 @@ int StrSize(char* str)
 		i++;
 	}
 	return i;
-}
-
-bool GenExists(struct GenersList* list, char* str)
-{
-	struct GenersNode* temp;
-	for (temp = list->head; temp != NULL; temp = temp->next)
-	{
-		if (temp->ID == str)
-			return true;
-	}
-	return false;
 }
 
 struct GenersNode* GenSearch(struct GenersList* list, char* str)
@@ -408,30 +372,6 @@ void GenInfo(struct GenersList** geners, int num)
 	{
 		printf("%s", temp->article[i]);
 	}
-}
-
-void ClearAll(struct GenersList** list)
-{
-	int i, j;
-	struct GenersNode* temp;
-	i = 0; j = 0;
-	temp = NULL;
-	do
-	{
-		if (j >= 1)
-			break;
-		temp = (*list)->tail;
-		for (i = 0; i < 4; i++)
-		{
-			free(temp->article[i]);
-		}
-		free(temp->article);
-		free(temp->ID);
-		(*list)->tail = (*list)->tail->prev;
-		j++;
-	}while(true);
-	free(*list);
-	*list = NULL;
 }
 
 void NodeInit(struct PerfNode** node)
@@ -586,18 +526,6 @@ void SearchName(struct PerfList** list, char* name)
     }
 }
 
-void PerfClear(struct PerfList** list)
-{
-    struct PerfNode* node = (*list)->head;
-	while (node != NULL)
-    {
-		free(node->genID); node->genID = NULL;
-		free(node->name); node->name = NULL;
-        free(node->year);  node->year = NULL;
-        node = node->next;
-    }
-    free(*list); *list = NULL;
-}
 void Start(struct AlbList** list, struct User* user, int i, char* str)
 {
     printf("Hello! mp3ALL.com glad to see you!\n");
