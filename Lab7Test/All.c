@@ -565,7 +565,6 @@ void ShowGenres()
         i++;
         node = node->next;
     }
-    ClearAll(&geners);
 }
 
 void GenresInfo()
@@ -600,7 +599,6 @@ void PerfomancesAction(int i, char* str)
         }break;
         default: printf("You input incorrect number");break;
     }
-   	PerfClear(&perf);
     free(str);
 }
 
