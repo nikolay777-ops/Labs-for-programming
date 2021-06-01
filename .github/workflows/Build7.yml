@@ -18,6 +18,6 @@ jobs:
       run: |
             cd Lab7Test
             make Test
-            ./test
+            ./end
     - name: Codecov
       run:  curl -s https://codecov.io/bash | bash -s - -t token
