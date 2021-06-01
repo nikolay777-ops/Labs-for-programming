@@ -87,7 +87,7 @@ void TestAll()
 {
 	PerfomancesTest();
 	GenresTest();
-    	//UITest();
+    	UITest();
 	AlbumsTest();
 	printf("Tests are done!");
 }
