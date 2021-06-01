@@ -603,29 +603,30 @@ void PerfomancesAction(int i, char* str)
 
 void AlbumsAction(struct AlbList** list, struct User** user, char* str, int i)
 {
-        struct AlbList* search = NULL;
+        struct AlbNode* node = (*list)->head;
+	//struct AlbList* search = NULL;
 	printf("Please write the name of performer.");
-	search = SearchByPerformer(list, str);
-	if(!search)
-	{
-		printf("search error");
-		exit(1);
-	}
-	AlbInfo(search->head);
+	//search = SearchByPerformer(list, str);
+	//AlbInfo(search->head);
 	printf("\nDo you want to buy such album? (Yes/1, No/0)\n");
 	if (i == 1)
 	{
-		search->head->bought++;
-		(*user)->totalSum += search->head->price;
+		while(node != NULL)
+		{
+			node->bought++;
+			(*user)->totalSum += node->price;
+		}
+		//search->head->bought++;
+		//(*user)->totalSum += search->head->price;
 	}
-	AlbInfo(search->head->next);
-	printf("\nDo you want to buy such album? (Yes/1, No/0)\n");
-	if (i == 1)
-    	{
-        	search->head->next->bought++;
-        	(*user)->totalSum += search->head->next->price;
-    	}
-	free(str);
+	//AlbInfo(search->head->next);
+	//printf("\nDo you want to buy such album? (Yes/1, No/0)\n");
+	//if (i == 1)
+    //	{
+      //  	search->head->next->bought++;
+        //	(*user)->totalSum += search->head->next->price;
+    //	}
+	//free(str);
 }
 
 void Report(struct AlbList** list, struct UserList** usList)
