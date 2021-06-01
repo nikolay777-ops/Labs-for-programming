@@ -587,7 +587,7 @@ void PerfomancesAction(int i, char* str)
     {
         case 1:
         {
-			SearchID(&perf, "-HHP");
+	    SearchID(&perf, "-HHP");
             SearchID(&perf, "-ELEC");
             SearchID(&perf, "-BLU");
             SearchID(&perf, "-JZ");
@@ -601,9 +601,9 @@ void PerfomancesAction(int i, char* str)
     free(str);
 }
 
-void AlbumsAction(struct AlbList** list, struct User* user, char* str, int i)
+void AlbumsAction(struct AlbList** list, struct User** user, char* str, int i)
 {
-    struct AlbList* search = NULL;
+        struct AlbList* search = NULL;
 	printf("Please write the name of performer.");
 	search = SearchByPerformer(list, str);
 	AlbInfo(search->head);
@@ -611,14 +611,14 @@ void AlbumsAction(struct AlbList** list, struct User* user, char* str, int i)
 	if (i == 1)
 	{
 		search->head->bought++;
-		user->totalSum += search->head->price;
+		(*user)->totalSum += search->head->price;
 	}
 	AlbInfo(search->head->next);
 	printf("\nDo you want to buy such album? (Yes/1, No/0)\n");
 	if (i == 1)
     	{
         	search->head->next->bought++;
-        	user->totalSum += search->head->next->price;
+        	(*user)->totalSum += search->head->next->price;
     	}
 	free(str);
 }
