@@ -598,7 +598,7 @@ void PerfomancesAction(int i, char* str)
         }break;
         default: printf("You input incorrect number");break;
     }
-    free(str);
+    //free(str);
 }
 
 void AlbumsAction(struct AlbList** list, struct User** user, char* str, int i)
