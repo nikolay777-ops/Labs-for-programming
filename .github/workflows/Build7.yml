@@ -12,8 +12,6 @@ jobs:
 
     runs-on: windows-latest
     steps:   
-    - name: Install codecov
-      run: choco install codecov
     - name: Checkout code
       uses: actions/checkout@v2
     - name: Testing
