@@ -14,10 +14,18 @@ jobs:
     steps:   
     - name: Checkout code
       uses: actions/checkout@v2
-    - name: Testing
+    - name: TestingFirst
       run: |
             cd Lab7Test
             make Test
             ./end
-    - name: Codecov
+    - name: Codecovfirst
       run:  curl -s https://codecov.io/bash | bash -s - -t token
+    - name: TestingSecond
+      run: |
+            cd Lab7Test
+            make Test1
+            ./test1
+    - name: Codecovsecond
+      run:  curl -s https://codecov.io/bash | bash -s - -t token
+
