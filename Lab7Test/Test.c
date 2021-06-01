@@ -75,7 +75,7 @@ void UITest()
     usList->head->next = NULL;
     usList->head->prev = NULL;
     str = "Kanye West";
-    AlbumsAction(&list, &((*usList)->head), str, 1);
+    AlbumsAction(&list, (&((*usList)->head)), str, 1);
 	//Start(&list, usList->head, 1, "");
     //Start(&list, usList->head, 2, "");
     //Start(&list, usList->head, 3, "");
