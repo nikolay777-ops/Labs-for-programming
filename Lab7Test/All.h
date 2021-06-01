@@ -138,7 +138,7 @@ void GenresInfo();
 
 void PerfomancesAction(int i, char* str);
 
-void AlbumsAction(struct AlbList** list, struct User* user, char* str, int i);
+void AlbumsAction(struct AlbList** list, struct User** user, char* str, int i);
 
 void Report(struct AlbList** list, struct UserList** usList);
 
