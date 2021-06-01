@@ -21,8 +21,6 @@ struct GenersList
 	int size;
 };
 
-bool GenExists(struct GenersList* list, char* str);
-
 struct GenersNode* GenSearch(struct GenersList* list, char* str);
 
 struct GenersNode* GenCr(struct GenersNode* node);
@@ -34,8 +32,6 @@ void GenPush(struct GenersList** list, char* str);
 struct GenersList* ListCr();
 
 void GenInfo(struct GenersList** geners, int num);
-
-void ClearAll(struct GenersList** list);
 
 struct CompNode
 {
@@ -85,10 +81,6 @@ struct AlbNode* SearchByAlbum(struct AlbList** list, char* str);
 
 struct AlbNode* SearchByCompose(struct AlbList** list, char* str);
 
-void ClearCompose(struct CompList** list);
-
-void ClearAlb(struct AlbList** list);
-
 void AlbInfo(struct AlbNode* node);
 
 void AllAlbums(struct AlbList** albums);
@@ -123,8 +115,6 @@ void PerfInfo(struct PerfNode* node);
 void SearchID(struct PerfList** list, char* ID);
 
 void SearchName(struct PerfList** list, char* name);
-
-void PerfClear(struct PerfList** list);
 
 struct User
 {
