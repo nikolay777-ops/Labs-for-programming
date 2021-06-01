@@ -615,6 +615,7 @@ void AlbumsAction(struct AlbList** list, struct User** user, char* str, int i)
 		{
 			node->bought++;
 			(*user)->totalSum += node->price;
+			node = node->next;
 		}
 		//search->head->bought++;
 		//(*user)->totalSum += search->head->price;
