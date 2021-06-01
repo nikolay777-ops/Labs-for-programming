@@ -85,10 +85,10 @@ void GenresTest()
 
 void TestAll()
 {
-	UITest();
 	PerfomancesTest();
 	GenresTest();
 	AlbumsTest();
+	UITest();
 	printf("Tests are done!");
 }
 
